@@ -1,13 +1,24 @@
-const routes = document.querySelector("#routes");
+    const routes = document.querySelector("#routes");
 const nearby = document.querySelector("#nearby");
 const logo = document.querySelector("#logo");
 const home = document.querySelector("#home");
+const background = document.querySelector("#map-bg")
 let startX = 0;
 let startY = 0;
 let homeOpen = true;
 let routeOpen = false;
 let nearbyOpen = false;
 
+const overlay = document.querySelector("#overlay");
+if (homeOpen === true){
+    overlay.style.opacity = "0";
+}
+else if (homeOpen === false){
+    overlay.style.opacity = "1";
+}
+function updateOverlay() {
+    overlay.style.opacity = homeOpen ? "0" : "1";
+}
 
 document.addEventListener("touchstart",(e)=>{
 
@@ -32,9 +43,11 @@ document.addEventListener("touchend",(e)=>{
         routes.style.left = "0";
         logo.style.transition = "0.4s";
         logo.style.opacity = "0";
+        background.style.transition = "0.4s";
+        background.style.background = "white";
         routeOpen = true;
         homeOpen = false;
-        
+        updateOverlay();
         
     }
 
@@ -46,8 +59,11 @@ document.addEventListener("touchend",(e)=>{
         routes.style.left = "100vw";
         logo.style.transition = "0.4s";
         logo.style.opacity = "1";
+        background.style.transition = "0.4s";
+        background.style.background = "#222";
         routeOpen = false;
         homeOpen = true;
+        updateOverlay();
         
     }
 
@@ -59,8 +75,11 @@ document.addEventListener("touchend",(e)=>{
         nearby.style.top = "0";
         logo.style.transition = "0.4s";
         logo.style.opacity = "0";
+        background.style.transition = "0.4s";
+        background.style.background = "white";
         nearbyOpen = true;
         homeOpen = false;
+        updateOverlay();
       
     }
 
@@ -72,8 +91,11 @@ document.addEventListener("touchend",(e)=>{
         nearby.style.top = "100vh";
         logo.style.transition = "0.4s";
         logo.style.opacity = "1";
+        background.style.transition = "0.4s";
+        background.style.background = "#222";
         nearbyOpen = false;
         homeOpen = true;
+        updateOverlay();
         
     }
 

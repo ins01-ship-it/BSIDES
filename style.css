@@ -123,13 +123,27 @@ body{
 }
 
 #overlay{
-    z-index: 3;
+    inset: 0;
 }
 
 .cross{
-    height: 5vw;
+    position: absolute;
+    height: 10vw;
     width: auto;
 }
 #ctopleft{
-    position: absolute; top: 0; left: 0;
+    top: 0;
+    left: 0;
+}
+#ctopright{
+    top: 0;
+    right: 0;
+}
+#cbotleft{
+    bottom: 0;
+    left: 0;
+}
+#cbutleft{
+    bottom: 0;
+    right: 0;
 }
