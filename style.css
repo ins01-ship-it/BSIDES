@@ -46,8 +46,15 @@ a:active{
 #main{
     position:absolute;
     inset: 0;
+    height: 100%;
+    overflow: hidden;
     display:flex;
+    align-items:center;
+    justify-content:center;
     background-color: white;
+}
+#main h1{
+    z-index: 10;
 }
 #main img{
     height: 100vh;
