@@ -12,15 +12,11 @@ body{
     font-family:sans-serif;
 }
 
-a{
+a, a:active{
     text-decoration: none;
-    color: black;
-    font-size: 7vw;
-}
-a:active{
-    text-decoration: none;
-    color: black;
-    font-size: 7vw;
+    color: white;
+    font-size: 6vw;
+    font-weight: bold;
 }
 
 #world{
@@ -138,15 +134,14 @@ a:active{
     right:100vw;
     top:0;
 
-    background:#8d010100;
-
     padding:30px;
 
     overflow:auto;
 }
 
 .route-card{
-    background:rgb(202, 197, 197);
+    background:rgb(0, 0, 0);
+    color: white;
 
     margin-top:20px;
 
@@ -161,7 +156,6 @@ a:active{
     left:0;
     bottom:-100vh;
 
-    background:#f5f5f500;
 
     padding:20px;
 }
@@ -183,7 +177,8 @@ a:active{
     min-width:80vw;
     height:60vh;
 
-    background:rgba(255, 255, 255, 0.781);
+    background:rgba(0, 0, 0, 1);
+    color: white;
 
     border-radius:25px;
 
