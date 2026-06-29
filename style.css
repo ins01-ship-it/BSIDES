@@ -12,6 +12,17 @@ body{
     font-family:sans-serif;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 7vw;
+}
+a:active{
+    text-decoration: none;
+    color: black;
+    font-size: 7vw;
+}
+
 #world{
     width:100vw;
     height:100vh;
