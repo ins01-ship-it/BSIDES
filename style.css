@@ -40,15 +40,67 @@ a:active{
 #home{
     left:0;
     top:0;
-    background:#111;
-    color:white;
+    background:#ffffff;
+}
+
+#main{
+    position:absolute;
+    inset: 0;
+    display:flex;
+    background-color: white;
+}
+#main img{
+    height: 100vh;
+    width: auto;
+    position: absolute; top: 0; left: 0;
+}
+#one{
+    position: absolute; top: 10%; left: 0%;
+    width: 50%;
+    height: 30%;
+    overflow: hidden;
+}
+#two{
+    position: absolute; top: 20%; left: 10%;
+    width: 55%;
+    height: 40%;
+    overflow: hidden;
+}
+#three{
+    position: absolute; top: 50%; left: 40%;
+    width: 70%;
+    height: 30%;
+    overflow: hidden;
+}
+#four{
+    position: absolute; top: 0%; left: 50%;
+    width: 50%;
+    height: 40%;
+    overflow: hidden;
+}
+#five{
+    position: absolute; top: 50%; left: 0%;
+    width: 60%;
+    height: 60%;
+    overflow: hidden;
+}
+
+#six{
+    position: absolute; top: 30%; left: 5%;
+    width: 50%;
+    height: 30%;
+    overflow: hidden;
+}
+#seven{
+    position: absolute; top: 70%; left: 50%;
+    width: 50%;
+    height: 30%;
+    overflow: hidden;
 }
 
 #map-bg{
     position:absolute;
     inset: 0;
-
-    background:#222;
 
     display:flex;
     align-items:center;
