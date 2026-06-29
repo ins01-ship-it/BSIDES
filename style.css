@@ -35,7 +35,7 @@ body{
 
 #map-bg{
     position:absolute;
-    inset:0;
+    inset: 0;
 
     background:#222;
 
@@ -43,7 +43,11 @@ body{
     align-items:center;
     justify-content:center;
 
-    opacity:0.3;
+    opacity: 1;
+}
+#map-bg img{
+    height: 100%;
+    width: 100%;
 }
 
 #logo{
@@ -116,4 +120,16 @@ body{
     padding:30px;
 
     scroll-snap-align:center;
+}
+
+#overlay{
+    z-index: 3;
+}
+
+.cross{
+    height: 5vw;
+    width: auto;
+}
+#ctopleft{
+    position: absolute; top: 0; left: 0;
 }
