@@ -94,6 +94,7 @@ function updateOverlay() {
 
 updateOverlay();
 
+
 //Distanz berechnen
 
 function toRad(value) {
@@ -261,8 +262,6 @@ document.addEventListener("touchend",(e)=>{
 }
 );
 
-
-
 if(nearby.style.top ==="0"){
     nearbyOpen = true;
     routeOpen = false;
@@ -280,8 +279,8 @@ if (nearbyOpen === false && routeOpen === false){
 }else if (homeOpen === false && nearbyOpen === false){
     routeOpen = true;
 }
-
 </script>
 
+<link rel="script" href="app.js">
 </body>
 </html>
