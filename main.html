@@ -92,7 +92,9 @@ function updateOverlay() {
     overlay.style.opacity = homeOpen ? "0" : "1";
 }
 
+updateOverlay();
 
+//Distanz berechnen
 
 function toRad(value) {
     return value * Math.PI / 180;
@@ -179,7 +181,7 @@ if (navigator.geolocation) {
     showDistanceError();
 }
 
-updateOverlay();
+//ende
 
 document.addEventListener("touchstart",(e)=>{
 
