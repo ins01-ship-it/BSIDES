@@ -10,33 +10,33 @@
 <body>
 
     <div class="screen" id="main">
-            <div id="one"><img src="images/map/2.png" alt="map"></div>
-            <div id="two"><img src="images/map/1.png" alt="map"></div>
-            <div id="three"><img src="images/map/3.png" alt="map"></div>
-            <div id="four"><img src="images/map/4.png" alt="map"></div>
-            <div id="five"><img src="images/map/5.png" alt="map"></div>
-            <div id="six"><img src="images/map/6.png" alt="map"></div>
-            <div id="seven"><img src="images/map/7.png" alt="map"></div>
+        <div id="one"><img src="images/map/2.png" alt="map"></div>
+        <div id="two"><img src="images/map/1.png" alt="map"></div>
+        <div id="three"><img src="images/map/3.png" alt="map"></div>
+        <div id="four"><img src="images/map/4.png" alt="map"></div>
+        <div id="five"><img src="images/map/5.png" alt="map"></div>
+        <div id="six"><img src="images/map/6.png" alt="map"></div>
+        <div id="seven"><img src="images/map/7.png" alt="map"></div>
 
-            <h1>BSides</h1>
-            
-        </div>
+        <h1>BSides</h1>
+        
+    </div>
 
         
 
-        <script>
-            let redirected = false;
+    <script>
+        let redirected = false;
 
-            function goToMainPage() {
-                if (redirected) return;
-                redirected = true;
-                window.location.href = "main.html";
-            }
+        function goToMainPage() {
+            if (redirected) return;
+            redirected = true;
+            window.location.href = "main.html";
+        }
 
-            document.addEventListener("click", goToMainPage, { once: true });
-            document.addEventListener("touchstart", goToMainPage, { once: true });
-            document.addEventListener("touchmove", goToMainPage, { once: true });
-            document.addEventListener("pointerdown", goToMainPage, { once: true });
-        </script>
+        document.addEventListener("click", goToMainPage, { once: true });
+        document.addEventListener("touchstart", goToMainPage, { once: true });
+        document.addEventListener("touchmove", goToMainPage, { once: true });
+        document.addEventListener("pointerdown", goToMainPage, { once: true });
+    </script>
 </body>
 </html>
