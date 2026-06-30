@@ -212,3 +212,11 @@ a, a:active{
     bottom: 0;
     right: 0;
 }
+#cmidleft{
+    top: 50%;
+    left: 0;
+}
+#cmidright{
+    top: 50%;
+    right: 0;
+}
