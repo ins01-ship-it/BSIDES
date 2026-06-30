@@ -95,24 +95,34 @@ function updateOverlay() {
 updateOverlay();
 
 
-//Distanz berechnen
+// Distanzberechnung für die Orte in der Nähe
+// Diese Funktionen ermitteln aus dem aktuellen Standort des Nutzers und den Adressen
+// der Orte die Entfernung und zeigen sie in den jeweiligen Karten an.
 
+// Konvertiert Grad in Radiant, weil die Berechnung mit trigonometrischen Funktionen
+// im Bogenmaß arbeitet.
 function toRad(value) {
     return value * Math.PI / 180;
 }
 
+// Berechnet die Distanz zwischen zwei geografischen Punkten in Metern.
+// Dabei werden die Breitengrade und Längengrade beider Positionen verwendet.
+// Die Formel basiert auf dem Haversine-Algorithmus und ist für die Entfernung auf der Erde geeignet.
 function getDistanceMeters(lat1, lng1, lat2, lng2) {
-    const earthRadius = 6371000;
-    const dLat = toRad(lat2 - lat1);
-    const dLng = toRad(lng2 - lng1);
+    const earthRadius = 6371000; // Radius der Erde in Metern
+    const dLat = toRad(lat2 - lat1); // Unterschied der Breitengrade in Radiant
+    const dLng = toRad(lng2 - lng1); // Unterschied der Längengrade in Radiant
     const a =
         Math.sin(dLat / 2) * Math.sin(dLat / 2) +
         Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
         Math.sin(dLng / 2) * Math.sin(dLng / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return earthRadius * c;
+    return earthRadius * c; // Rückgabe der Distanz in Metern
 }
 
+// Formatiert die berechnete Entfernung für die Anzeige.
+// Wenn die Entfernung 1000 Meter oder mehr beträgt, wird sie in Kilometern angezeigt.
+// Ansonsten wird sie in Metern angezeigt.
 function formatDistance(meters) {
     if (meters >= 1000) {
         return `${(meters / 1000).toFixed(1)} km entfernt`;
@@ -120,6 +130,9 @@ function formatDistance(meters) {
     return `${Math.round(meters)} m entfernt`;
 }
 
+// Wandelt eine Adresse in geografische Koordinaten um.
+// Dazu wird der freie Geocoding-Dienst OpenStreetMap Nominatim verwendet.
+// Die Funktion ist asynchron, weil der Netzwerkaufruf einige Zeit dauern kann.
 async function geocodeAddress(address) {
     const response = await fetch(`https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=${encodeURIComponent(address)}`, {
         headers: {
@@ -142,9 +155,12 @@ async function geocodeAddress(address) {
     };
 }
 
+// Ermittelt die Entfernungen für alle Orte in der Nähe.
+// Dazu wird zuerst die aktuelle Position des Nutzers verwendet und anschließend
+// jede Adresse geocodiert, um die genaue Position des Ortes zu erhalten.
 async function updatePlaceDistances(position) {
-    const userLat = position.coords.latitude;
-    const userLng = position.coords.longitude;
+    const userLat = position.coords.latitude; // Aktuelle Breite des Nutzers
+    const userLng = position.coords.longitude; // Aktuelle Länge des Nutzers
 
     const cards = document.querySelectorAll(".place-card");
 
@@ -152,25 +168,30 @@ async function updatePlaceDistances(position) {
         const distanceEl = card.querySelector(".distance");
         if (!distanceEl) continue;
 
-        const address = card.dataset.address;
+        const address = card.dataset.address; // Adresse aus dem HTML-Attribut
         distanceEl.textContent = "Wird berechnet…";
 
         try {
-            const { lat, lng } = await geocodeAddress(address);
-            const distance = getDistanceMeters(userLat, userLng, lat, lng);
-            distanceEl.textContent = formatDistance(distance);
+            const { lat, lng } = await geocodeAddress(address); // Adresse zu Koordinaten umwandeln
+            const distance = getDistanceMeters(userLat, userLng, lat, lng); // Entfernung berechnen
+            distanceEl.textContent = formatDistance(distance); // Ergebnis formatieren und anzeigen
         } catch (error) {
             distanceEl.textContent = "Adresse nicht verfügbar";
         }
     }
 }
 
+// Falls der Standort nicht verfügbar ist oder die Erlaubnis verweigert wird,
+// wird für alle Entfernungsanzeigen eine Fehlermeldung angezeigt.
 function showDistanceError() {
     document.querySelectorAll(".distance").forEach((el) => {
         el.textContent = "Standort nicht verfügbar";
     });
 }
 
+// Fragt den Browser nach der aktuellen Position des Nutzers.
+// Wenn dies erfolgreich ist, werden die Entfernungen ausgelöst.
+// Wenn nicht, wird die Fehlermeldung angezeigt.
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
         updatePlaceDistances(position);
@@ -182,7 +203,7 @@ if (navigator.geolocation) {
     showDistanceError();
 }
 
-//ende
+// Ende der Distanzberechnung
 
 document.addEventListener("touchstart",(e)=>{
 

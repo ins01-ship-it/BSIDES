@@ -50,6 +50,8 @@ a:active{
     width: 100%;
     margin-top: 100vh;
     mix-blend-mode: multiply;
+    display: flex;
+    flex-direction: column;
 }
 #path-bg img{
     width: 100%;
@@ -75,4 +77,83 @@ a:active{
 #cbutleft{
     bottom: 0;
     right: 0;
+}
+
+
+.standort{
+    position: absolute;
+    font-size: 20px;
+}
+
+#so1{
+    margin-top: 27%;
+    margin-left: 15%;
+}
+#so2{
+    margin-top: 49%;
+    margin-left: 25%;
+}
+#so3{
+    margin-top: 41%;
+    margin-left: 66%;
+}
+#so4{
+    margin-top: 94%;
+    margin-left: 66%;
+    transform: rotate(90deg);
+}
+#so5{
+    margin-top: 113%;
+    margin-left: 32%;
+    transform: rotate(180deg);
+}
+#so6{
+    margin-top: 136%;
+    margin-left: 75%;
+}
+#so7{
+    margin-top: 166%;
+    margin-left: 75%;
+    transform: rotate(180deg);
+}
+#so8{
+    margin-top: 158%;
+    margin-left: 3%;
+}
+#so9{
+    margin-top: 214%;
+    margin-left: 3%;
+}
+#so10{
+    margin-top: 193%;
+    margin-left: 30%;
+    transform: rotate(-85deg);
+}
+#so11{
+    margin-top: 225%;
+    margin-left: 64%;
+    transform: rotate(90deg);
+}
+#so12{
+    margin-top: 259%;
+    margin-left: 55%;
+}
+#so13{
+    margin-top: 287%;
+    margin-left: 63%;
+    transform: rotate(180deg);
+}
+#so14{
+    margin-top: 315%;
+    margin-left: -8%;
+    transform: rotate(90deg);
+}
+#so15{
+    margin-top: 327%;
+    margin-left: 50%;
+}
+#so16{
+    margin-top: 357%;
+    margin-left: 70%;
+    transform: rotate(180deg);
 }
