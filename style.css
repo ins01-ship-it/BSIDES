@@ -218,6 +218,37 @@ a, a:active{
     color:#e6e6e6;
 }
 
+.bside{
+    position: absolute;
+    height: 20vw;
+    width: auto;
+}
+#b{
+    top: 40%;
+    left: 10%;
+}
+#s1{
+    top: 40%;
+    left: 30%;
+
+}
+#i{
+    top: 40%;
+    left: 40%;
+}
+#d{
+    top: 40%;
+    left: 50%;
+}
+#e{
+    top: 40%;
+    left: 80%;
+}
+#s2{
+    top:40%;
+    left: 20%;
+}
+
 #overlay{
     inset: 0;
 }
