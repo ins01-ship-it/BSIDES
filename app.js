@@ -9,22 +9,22 @@ let routeOpen = false;
 let nearbyOpen = false;
 
 const places = [
-    { name: "Schlossplatz", lat: 52.2643, lng: 10.5236 },
-    { name: "Löwenwall", lat: 52.2634, lng: 10.5248 },
-    { name: "Kirschbaum-Allee", lat: 52.2647, lng: 10.5232 },
-    { name: "Franki Bücherschrank", lat: 52.2640, lng: 10.5208 },
-    { name: "Weißes Ross", lat: 52.2638, lng: 10.5195 },
-    { name: "Studentenwohnheim Michaelishof", lat: 52.2523, lng: 10.5407 },
-    { name: "Residenzschloss/Schlossarkaden", lat: 52.2555, lng: 10.5272 },
-    { name: "Walhalla", lat: 52.2648, lng: 10.5334 },
-    { name: "Kolonialdenkmal an der Jasperallee", lat: 52.2732, lng: 10.5337 },
-    { name: "Wunderlauchfeld an der Ebertallee, Nussberg", lat: 52.2734, lng: 10.5318 },
-    { name: "Nexus", lat: 52.2729, lng: 10.5265 },
-    { name: "Jahnstraße", lat: 52.2672, lng: 10.5232 },
-    { name: "Naturhistorisches Museum", lat: 52.2632, lng: 10.5228 },
-    { name: "Altstadtmarkt", lat: 52.2643, lng: 10.5241 },
-    { name: "Wendenring", lat: 52.2587, lng: 10.5301 },
-    { name: "Kaiserstraße", lat: 52.2670, lng: 10.5357 }
+    { name: "Schlossplatz", lat: 52.2643, lng: 10.5236, image: "images/path.jpg" },
+    { name: "Löwenwall", lat: 52.2634, lng: 10.5248, image: "images/route1.png" },
+    { name: "Kirschbaum-Allee", lat: 52.2647, lng: 10.5232, image: "images/route2.png" },
+    { name: "Franki Bücherschrank", lat: 52.2640, lng: 10.5208, image: "images/Bilder-Kachel/Flo.gif" },
+    { name: "Weißes Ross", lat: 52.2638, lng: 10.5195, image: "images/Bilder-Kachel/Jonathan.png" },
+    { name: "Studentenwohnheim Michaelishof", lat: 52.2523, lng: 10.5407, image: "images/route1.png" },
+    { name: "Residenzschloss/Schlossarkaden", lat: 52.2555, lng: 10.5272, image: "images/route2.png" },
+    { name: "Walhalla", lat: 52.2648, lng: 10.5334, image: "images/map.PNG" },
+    { name: "Kolonialdenkmal an der Jasperallee", lat: 52.2732, lng: 10.5337, image: "images/path.jpg" },
+    { name: "Wunderlauchfeld an der Ebertallee, Nussberg", lat: 52.2734, lng: 10.5318, image: "images/route1.png" },
+    { name: "Nexus", lat: 52.2729, lng: 10.5265, image: "images/route2.png" },
+    { name: "Jahnstraße", lat: 52.2672, lng: 10.5232, image: "images/map.PNG" },
+    { name: "Naturhistorisches Museum", lat: 52.2632, lng: 10.5228, image: "images/path.jpg" },
+    { name: "Altstadtmarkt", lat: 52.2643, lng: 10.5241, image: "images/route1.png" },
+    { name: "Wendenring", lat: 52.2587, lng: 10.5301, image: "images/route2.png" },
+    { name: "Kaiserstraße", lat: 52.2670, lng: 10.5357, image: "images/map.PNG" }
 ];
 
 function updateOverlay() {
@@ -59,10 +59,13 @@ function buildPlaceCards() {
     if (!container) return;
 
     container.innerHTML = places.map((place) => `
-        <div class="place-card" data-lat="${place.lat}" data-lng="${place.lng}">
-            <h2>${place.name}</h2>
-            <p class="distance">Standort wird ermittelt…</p>
-        </div>
+        <a class="place-card" href="https://www.google.com/search?q=${encodeURIComponent(place.name + " Braunschweig")}" target="_blank" rel="noopener noreferrer" data-lat="${place.lat}" data-lng="${place.lng}">
+            <img class="place-image" src="${place.image || "images/path.jpg"}" alt="${place.name}" loading="lazy">
+            <div class="place-content">
+                <h2>${place.name}</h2>
+                <p class="distance">Standort wird ermittelt…</p>
+            </div>
+        </a>
     `).join("");
 }
 
