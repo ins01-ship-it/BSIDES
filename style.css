@@ -58,52 +58,38 @@ a, a:active{
     z-index: 10;
 }
 #main img{
-    height: 100vh;
+    position: absolute;
     width: auto;
-    position: absolute; top: 0; left: 0;
+    mix-blend-mode: multiply;
 }
 #one{
-    position: absolute; top: 10%; left: 0%;
-    width: 50%;
+    top: 10%; left: 0%;
     height: 30%;
-    overflow: hidden;
 }
 #two{
-    position: absolute; top: 20%; left: 10%;
-    width: 55%;
+    top: 20%; left: 10%;
     height: 40%;
-    overflow: hidden;
 }
 #three{
-    position: absolute; top: 50%; left: 40%;
-    width: 70%;
+    top: 50%; left: 40%;
     height: 30%;
-    overflow: hidden;
 }
 #four{
-    position: absolute; top: 0%; left: 50%;
-    width: 50%;
+    top: 0%; left: 50%;
     height: 40%;
-    overflow: hidden;
 }
 #five{
-    position: absolute; top: 50%; left: 0%;
-    width: 60%;
+    top: 50%; left: 0%;
     height: 60%;
-    overflow: hidden;
 }
 
 #six{
-    position: absolute; top: 30%; left: 5%;
-    width: 50%;
+    top: 30%; left: 5%;
     height: 30%;
-    overflow: hidden;
 }
 #seven{
-    position: absolute; top: 70%; left: 50%;
-    width: 50%;
+    top: 70%; left: 50%;
     height: 30%;
-    overflow: hidden;
 }
 
 #map-bg{
@@ -223,37 +209,195 @@ a, a:active{
     color:#e6e6e6;
 }
 
+@keyframes move{
+    0%, 100%{
+        transform: translateY(5%);
+    }
+    50%{
+        transform: translateY(-5%);
+    }
+}
+
 .bside{
     position: absolute;
     height: 20vw;
-    width: auto;
+    width: auto; 
 }
 #b{
     top: 40%;
     left: 5%;
+    animation: move 3s ease-in-out infinite;
+    transform-origin: center;
 }
 #s1{
     top: 42%;
     left: 25%;
-
+    animation: move 3s ease-in-out infinite;
+    animation-delay: 0.2s;
 }
 #i{
     top: 39%;
     left: 35%;
+    animation: move 3s ease-in-out infinite;
+    animation-delay: 0.3s;
 }
 #d{
     top: 30%;
     left: 43%;
     height: 40vw;
+    animation: move 3s ease-in-out infinite;
+    animation-delay: 0.9s;
 }
 #e{
     top: 42%;
     left: 55%;
+    animation: move 3s ease-in-out infinite;
+    animation-delay: 0.5s;
 }
 #s2{
     top:40%;
     left: 65%;
+    animation: move 3s ease-in-out infinite;
+    animation-delay: 0.7s;
 }
+
+@keyframes breathe{
+    0%, 100%{
+        transform: scale(0.01);
+    }
+    50%{
+        transform: scale(10);
+    }
+}
+
+@keyframes in{
+    0%{
+        top:20%;
+        left: -20%;
+        height:90vw;
+        rotate:180deg;
+    }
+    100%{
+        top: 40%;
+        left: 5%;
+        height: 20vw;
+        rotate: 0deg;
+    }
+}
+#bb{
+    top: 40%;
+    left: 5%;
+    animation: in 0.3s ease-in-out forwards;
+    animation: move 3s ease-in-out infinite;
+}
+@keyframes in2{
+    0%{
+        top:20%;
+        left: 0%;
+        height:90vw;
+        rotate:180deg;
+    }
+    100%{
+        top: 40%;
+        left: 25%;
+        height: 20vw;
+        rotate: 0deg;
+    }
+}
+#ss1{
+    top: 42%;
+    left: 25%;
+    animation: in2 0.4s ease-in-out forwards;
+    animation: move 3s ease-in-out infinite;
+    animation-delay: 0.2s;
+}
+@keyframes in3{
+    0%{
+        top:20%;
+        left: -20%;
+        height:90vw;
+        rotate:180deg;
+    }
+    100%{
+        top: 39%;
+        left: 35%;
+        height: 20vw;
+        rotate: 0deg;
+    }
+}
+#ii{
+    top: 39%;
+    left: 35%;
+    animation: in3 0.4s ease-in-out forwards;
+    animation: move 3s ease-in-out infinite;
+    animation-delay: 0.3s;
+}
+@keyframes in4{
+    0%{
+        top:70%;
+        left: -20%;
+        height:90vw;
+        rotate:180deg;
+    }
+    100%{
+        top: 30%;
+        left: 43%;
+        height: 40vw;
+        rotate: 0deg;
+    }
+}
+#dd{
+    top: 30%;
+    left: 43%;
+    height: 40vw;
+    animation: in4 0.5s ease-in-out forwards;
+    animation: move 3s ease-in-out infinite;
+    animation-delay: 0.9s;
+}
+@keyframes in5{
+    0%{
+        top: 0%;
+        left: 200%;
+        height:90vw;
+        rotate:180deg;
+    }
+    100%{
+        top: 42%;
+        left: 55%;
+        height: 20vw;
+        rotate: 0deg;
+    }
+}
+#ee{
+    top: 42%;
+    left: 55%;
+    animation: in5 0.6s ease-in-out forwards;
+    animation: move 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+@keyframes in6{
+    0%{
+        top:90%;
+        left: 400%;
+        height:90vw;
+        rotate:180deg;
+    }
+    100%{
+        top: 40%;
+        left: 65%;
+        height: 20vw;
+        rotate: 0deg;
+    }
+}
+#ss2{
+    top:40%;
+    left: 65%;
+    animation: in6 0.7s ease-in-out forwards;
+    animation: move 3s ease-in-out infinite;
+    animation-delay: 0.7s;
+}
+
+
 
 #overlay{
     inset: 0;
