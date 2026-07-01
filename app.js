@@ -1,7 +1,6 @@
 const routes = document.querySelector("#routes");
 const nearby = document.querySelector("#nearby");
 const logo = document.querySelector("#logo");
-const home = document.querySelector("#home");
 const overlay = document.querySelector("#overlay");
 let startX = 0;
 let startY = 0;
@@ -9,14 +8,28 @@ let homeOpen = true;
 let routeOpen = false;
 let nearbyOpen = false;
 
+const places = [
+    { name: "Schlossplatz", lat: 52.2643, lng: 10.5236 },
+    { name: "Löwenwall", lat: 52.2634, lng: 10.5248 },
+    { name: "Kirschbaum-Allee", lat: 52.2647, lng: 10.5232 },
+    { name: "Franki Bücherschrank", lat: 52.2640, lng: 10.5208 },
+    { name: "Weißes Ross", lat: 52.2638, lng: 10.5195 },
+    { name: "Studentenwohnheim Michaelishof", lat: 52.2523, lng: 10.5407 },
+    { name: "Residenzschloss/Schlossarkaden", lat: 52.2555, lng: 10.5272 },
+    { name: "Walhalla", lat: 52.2648, lng: 10.5334 },
+    { name: "Kolonialdenkmal an der Jasperallee", lat: 52.2732, lng: 10.5337 },
+    { name: "Wunderlauchfeld an der Ebertallee, Nussberg", lat: 52.2734, lng: 10.5318 },
+    { name: "Nexus", lat: 52.2729, lng: 10.5265 },
+    { name: "Jahnstraße", lat: 52.2672, lng: 10.5232 },
+    { name: "Naturhistorisches Museum", lat: 52.2632, lng: 10.5228 },
+    { name: "Altstadtmarkt", lat: 52.2643, lng: 10.5241 },
+    { name: "Wendenring", lat: 52.2587, lng: 10.5301 },
+    { name: "Kaiserstraße", lat: 52.2670, lng: 10.5357 }
+];
+
 function updateOverlay() {
     overlay.style.opacity = homeOpen ? "0" : "1";
 }
-
-updateOverlay();
-
-
-//Distanz berechnen
 
 function toRad(value) {
     return value * Math.PI / 180;
@@ -41,49 +54,33 @@ function formatDistance(meters) {
     return `${Math.round(meters)} m entfernt`;
 }
 
-async function geocodeAddress(address) {
-    const response = await fetch(`https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=${encodeURIComponent(address)}`, {
-        headers: {
-            "Accept-Language": "de"
-        }
-    });
+function buildPlaceCards() {
+    const container = document.querySelector("#place-list");
+    if (!container) return;
 
-    if (!response.ok) {
-        throw new Error("Geocoding failed");
-    }
-
-    const data = await response.json();
-    if (!data[0]) {
-        throw new Error("Address not found");
-    }
-
-    return {
-        lat: parseFloat(data[0].lat),
-        lng: parseFloat(data[0].lon)
-    };
+    container.innerHTML = places.map((place) => `
+        <div class="place-card" data-lat="${place.lat}" data-lng="${place.lng}">
+            <h2>${place.name}</h2>
+            <p class="distance">Standort wird ermittelt…</p>
+        </div>
+    `).join("");
 }
 
-async function updatePlaceDistances(position) {
+function updatePlaceDistances(position) {
     const userLat = position.coords.latitude;
     const userLng = position.coords.longitude;
 
     const cards = document.querySelectorAll(".place-card");
 
-    for (const card of cards) {
+    cards.forEach((card) => {
         const distanceEl = card.querySelector(".distance");
-        if (!distanceEl) continue;
+        if (!distanceEl) return;
 
-        const address = card.dataset.address;
-        distanceEl.textContent = "Wird berechnet…";
-
-        try {
-            const { lat, lng } = await geocodeAddress(address);
+        const lat = parseFloat(card.dataset.lat);
+        const lng = parseFloat(card.dataset.lng);
             const distance = getDistanceMeters(userLat, userLng, lat, lng);
             distanceEl.textContent = formatDistance(distance);
-        } catch (error) {
-            distanceEl.textContent = "Adresse nicht verfügbar";
-        }
-    }
+    });
 }
 
 function showDistanceError() {
@@ -91,6 +88,9 @@ function showDistanceError() {
         el.textContent = "Standort nicht verfügbar";
     });
 }
+
+buildPlaceCards();
+updateOverlay();
 
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -103,27 +103,19 @@ if (navigator.geolocation) {
     showDistanceError();
 }
 
-//ende
-
-document.addEventListener("touchstart",(e)=>{
-
+document.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
-
 });
 
-document.addEventListener("touchend",(e)=>{
-
+document.addEventListener("touchend", (e) => {
     let endX = e.changedTouches[0].clientX;
     let endY = e.changedTouches[0].clientY;
 
     let dx = endX - startX;
     let dy = endY - startY;
 
-    // links öffnen
-
-    if(dx < -80 && homeOpen === true){
-
+    if (dx < -80 && homeOpen === true) {
         routes.style.transition = "0.4s";
         routes.style.left = "0";
         logo.style.transition = "0.4s";
@@ -132,13 +124,9 @@ document.addEventListener("touchend",(e)=>{
         routeOpen = true;
         homeOpen = false;
         updateOverlay();
-        
     }
 
-    // rechts schließen
-
-    if(dx > 80 && homeOpen === false && routeOpen === true){
-
+    if (dx > 80 && homeOpen === false && routeOpen === true) {
         routes.style.transition = "0.4s";
         routes.style.left = "100vw";
         logo.style.transition = "0.4s";
@@ -147,13 +135,9 @@ document.addEventListener("touchend",(e)=>{
         routeOpen = false;
         homeOpen = true;
         updateOverlay();
-        
     }
 
-    // hoch öffnen
-
-    if(dy < -80 && homeOpen === true){
-
+    if (dy < -80 && homeOpen === true) {
         nearby.style.transition = "0.4s";
         nearby.style.top = "0";
         logo.style.transition = "0.4s";
@@ -162,13 +146,9 @@ document.addEventListener("touchend",(e)=>{
         nearbyOpen = true;
         homeOpen = false;
         updateOverlay();
-      
     }
 
-    // runter schließen
-
-    if(dy > 80 && homeOpen === false && nearbyOpen === true){
-
+    if (dy > 80 && homeOpen === false && nearbyOpen === true) {
         nearby.style.transition = "0.4s";
         nearby.style.top = "100vh";
         logo.style.transition = "0.4s";
@@ -177,26 +157,23 @@ document.addEventListener("touchend",(e)=>{
         nearbyOpen = false;
         homeOpen = true;
         updateOverlay();
-        
     }
+});
 
-}
-);
-
-if(nearby.style.top ==="0"){
+if (nearby.style.top === "0") {
     nearbyOpen = true;
     routeOpen = false;
     homeOpen = false;
 }
-if(routes.style.left === "0"){
+if (routes.style.left === "0") {
     routeOpen = true;
     homeOpen = false; 
     nearbyOpen = false;
 }
-if (nearbyOpen === false && routeOpen === false){
+if (nearbyOpen === false && routeOpen === false) {
     homeOpen = true;
-}else if (homeOpen === false && routeOpen === false){
+} else if (homeOpen === false && routeOpen === false) {
     nearbyOpen = true;
-}else if (homeOpen === false && nearbyOpen === false){
+} else if (homeOpen === false && nearbyOpen === false) {
     routeOpen = true;
 }
