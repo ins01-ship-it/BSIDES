@@ -11,7 +11,6 @@
 html,
 body{
     width:100vw;
-    max-width:100vw;
     font-family: altehaas, sans-serif;
     overflow-x: hidden;
 }
@@ -104,6 +103,7 @@ a:active{
 .standort{
     position: absolute;
     font-size: 20px;
+    white-space: nowrap;
 }
 
 #so1{
@@ -119,8 +119,8 @@ a:active{
     margin-left: 66%;
 }
 #so4{
-    margin-top: 94%;
-    margin-left: 66%;
+    margin-top: 90%;
+    margin-left: 60%;
     transform: rotate(90deg);
 }
 #so5{
@@ -130,53 +130,7 @@ a:active{
 }
 #so6{
     margin-top: 136%;
-    margin-left: 75%;
-}
-#so7{
-    margin-top: 166%;
-    margin-left: 75%;
-    transform: rotate(180deg);
-}
-#so8{
-    margin-top: 158%;
-    margin-left: 3%;
-}
-#so9{
-    margin-top: 214%;
-    margin-left: 3%;
-}
-#so10{
-    margin-top: 193%;
-    margin-left: 30%;
-    transform: rotate(-85deg);
-}
-#so11{
-    margin-top: 225%;
-    margin-left: 64%;
-    transform: rotate(90deg);
-}
-#so12{
-    margin-top: 259%;
-    margin-left: 55%;
-}
-#so13{
-    margin-top: 287%;
-    margin-left: 63%;
-    transform: rotate(180deg);
-}
-#so14{
-    margin-top: 315%;
-    margin-left: -8%;
-    transform: rotate(90deg);
-}
-#so15{
-    margin-top: 327%;
-    margin-left: 50%;
-}
-#so16{
-    margin-top: 357%;
-    margin-left: 70%;
-    transform: rotate(180deg);
+    margin-left: 65%;
 }
 
 
@@ -224,67 +178,7 @@ a:active{
 }
 #th6{
     width: 35%;
-    height: 20%;
-    margin-top: 136%;
+    height: 13%;
+    margin-top: 127%;
     margin-left: 65%;
-}
-#th7{
-    width: 35%;
-    height: 20%;
-    margin-top: 160%;
-    margin-left: 55%;
-}
-#th8{
-    width: 45%;
-    height: 15%;
-    margin-top: 158%;
-    margin-left: 3%;
-}
-#th9{
-    width: 45%;
-    height: 15%;
-    margin-top: 214%;
-    margin-left: 0%;
-}
-#th10{
-    width: 35%;
-    height: 20%;
-    margin-top: 193%;
-    margin-left: 30%;
-}
-#th11{
-    width: 35%;
-    height: 20%;
-    margin-top: 225%;
-    margin-left: 65%;
-}
-#th12{
-    width: 50%;
-    height: 20%;
-    margin-top: 250%;
-    margin-left: 30%;
-}
-#th13{
-    width: 35%;
-    height: 20%;
-    margin-top: 287%;
-    margin-left: 63%;
-}
-#th14{
-    width: 45%;
-    height: 40%;
-    margin-top: 310%;
-    margin-left: -8%;
-}
-#th15{
-    width: 40%;
-    height: 12%;
-    margin-top: 327%;
-    margin-left: 50%;
-}
-#th16{
-    width: 50%;
-    height: 16%;
-    margin-top: 357%;
-    margin-left: 50%;
 }
