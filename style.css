@@ -12,6 +12,13 @@ body{
     font-family:sans-serif;
 }
 
+a, a:active{
+    text-decoration: none;
+    color: white;
+    font-size: 6vw;
+    font-weight: bold;
+}
+
 #world{
     width:100vw;
     height:100vh;
@@ -29,21 +36,84 @@ body{
 #home{
     left:0;
     top:0;
-    background:#111;
-    color:white;
+    background:#ffffff;
+}
+
+#main{
+    position:absolute;
+    inset: 0;
+    height: 100%;
+    overflow: hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color: white;
+}
+#main h1{
+    z-index: 10;
+}
+#main img{
+    height: 100vh;
+    width: auto;
+    position: absolute; top: 0; left: 0;
+}
+#one{
+    position: absolute; top: 10%; left: 0%;
+    width: 50%;
+    height: 30%;
+    overflow: hidden;
+}
+#two{
+    position: absolute; top: 20%; left: 10%;
+    width: 55%;
+    height: 40%;
+    overflow: hidden;
+}
+#three{
+    position: absolute; top: 50%; left: 40%;
+    width: 70%;
+    height: 30%;
+    overflow: hidden;
+}
+#four{
+    position: absolute; top: 0%; left: 50%;
+    width: 50%;
+    height: 40%;
+    overflow: hidden;
+}
+#five{
+    position: absolute; top: 50%; left: 0%;
+    width: 60%;
+    height: 60%;
+    overflow: hidden;
+}
+
+#six{
+    position: absolute; top: 30%; left: 5%;
+    width: 50%;
+    height: 30%;
+    overflow: hidden;
+}
+#seven{
+    position: absolute; top: 70%; left: 50%;
+    width: 50%;
+    height: 30%;
+    overflow: hidden;
 }
 
 #map-bg{
     position:absolute;
-    inset:0;
-
-    background:#222;
+    inset: 0;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    opacity:0.3;
+    opacity: 1;
+}
+#map-bg img{
+    height: 100%;
+    width: 100%;
 }
 
 #logo{
@@ -64,15 +134,14 @@ body{
     right:100vw;
     top:0;
 
-    background:#8d010100;
-
     padding:30px;
 
     overflow:auto;
 }
 
 .route-card{
-    background:rgb(202, 197, 197);
+    background:rgb(0, 0, 0);
+    color: white;
 
     margin-top:20px;
 
@@ -87,7 +156,6 @@ body{
     left:0;
     bottom:-100vh;
 
-    background:#f5f5f500;
 
     padding:20px;
 }
@@ -109,11 +177,46 @@ body{
     min-width:80vw;
     height:60vh;
 
-    background:rgba(255, 255, 255, 0.781);
+    background:rgba(0, 0, 0, 1);
+    color: white;
 
     border-radius:25px;
 
     padding:30px;
 
     scroll-snap-align:center;
+}
+
+#overlay{
+    inset: 0;
+}
+
+.cross{
+    position: absolute;
+    height: 10vw;
+    width: auto;
+}
+#ctopleft{
+    top: 0;
+    left: 0;
+}
+#ctopright{
+    top: 0;
+    right: 0;
+}
+#cbotleft{
+    bottom: 0;
+    left: 0;
+}
+#cbutleft{
+    bottom: 0;
+    right: 0;
+}
+#cmidleft{
+    top: 50%;
+    left: 0;
+}
+#cmidright{
+    top: 50%;
+    right: 0;
 }
