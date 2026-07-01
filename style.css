@@ -132,22 +132,20 @@ a, a:active{
 
 #routes{
     right:100vw;
-    top:0;
-
-    padding:30px;
+    top: 30px;
 
     overflow:auto;
+}
+#routes h1{
+    padding: 10%;
 }
 
 .route-card{
     background:rgb(0, 0, 0);
     color: white;
 
-    margin-top:20px;
-
-    padding:30px;
-
-    border-radius:20px;
+    padding: 25px;
+    margin-left: 50px;
 }
 
 /* NEARBY */
