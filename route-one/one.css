@@ -23,6 +23,7 @@ h1{
 a{
     text-decoration: none;
     color: black;
+   
 }
 a:active{
     text-decoration: none;
@@ -107,8 +108,11 @@ a:active{
 }
 
 #so1{
-    margin-top: 27%;
-    margin-left: 15%;
+    margin-top: 1%;
+    margin-left: 10%;
+    height: 50px;
+    width: 150px;
+
 }
 #so2{
     margin-top: 49%;
@@ -137,8 +141,7 @@ a:active{
 .thumbnail{
     position: absolute;
     overflow: hidden;
-    background-color: grey;
-    mix-blend-mode: multiply;
+
     z-index: -1;
 }
 .thumbnail img{

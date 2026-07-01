@@ -1,3 +1,8 @@
+
+@font-face {
+    font-family: altehaas;
+    src: url('../fonts/altehaas/AlteHaasGroteskRegular.ttf') format('truetype');
+}
 *{
     margin:0;
     padding:0;
@@ -214,28 +219,29 @@ a, a:active{
 }
 #b{
     top: 40%;
-    left: 10%;
+    left: 5%;
 }
 #s1{
-    top: 40%;
-    left: 30%;
+    top: 42%;
+    left: 25%;
 
 }
 #i{
-    top: 40%;
-    left: 40%;
+    top: 39%;
+    left: 35%;
 }
 #d{
-    top: 40%;
-    left: 50%;
+    top: 30%;
+    left: 43%;
+    height: 40vw;
 }
 #e{
-    top: 40%;
-    left: 80%;
+    top: 42%;
+    left: 55%;
 }
 #s2{
     top:40%;
-    left: 20%;
+    left: 65%;
 }
 
 #overlay{
