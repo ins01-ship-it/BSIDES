@@ -9,22 +9,22 @@ let routeOpen = false;
 let nearbyOpen = false;
 
 const places = [
-    { name: "Schlossplatz", lat: 52.2643, lng: 10.5236, image: "images/path.jpg" },
-    { name: "Löwenwall", lat: 52.2634, lng: 10.5248, image: "images/route1.png" },
-    { name: "Kirschbaum-Allee", lat: 52.2647, lng: 10.5232, image: "images/route2.png" },
-    { name: "Franki Bücherschrank", lat: 52.2640, lng: 10.5208, image: "images/Bilder-Kachel/Flo.gif" },
-    { name: "Weißes Ross", lat: 52.2638, lng: 10.5195, image: "images/Bilder-Kachel/Jonathan.png" },
-    { name: "Studentenwohnheim Michaelishof", lat: 52.2523, lng: 10.5407, image: "images/route1.png" },
-    { name: "Residenzschloss/Schlossarkaden", lat: 52.2555, lng: 10.5272, image: "images/route2.png" },
-    { name: "Walhalla", lat: 52.2648, lng: 10.5334, image: "images/map.PNG" },
-    { name: "Kolonialdenkmal an der Jasperallee", lat: 52.2732, lng: 10.5337, image: "images/path.jpg" },
-    { name: "Wunderlauchfeld an der Ebertallee, Nussberg", lat: 52.2734, lng: 10.5318, image: "images/route1.png" },
-    { name: "Nexus", lat: 52.2729, lng: 10.5265, image: "images/route2.png" },
-    { name: "Jahnstraße", lat: 52.2672, lng: 10.5232, image: "images/map.PNG" },
-    { name: "Naturhistorisches Museum", lat: 52.2632, lng: 10.5228, image: "images/path.jpg" },
-    { name: "Altstadtmarkt", lat: 52.2643, lng: 10.5241, image: "images/route1.png" },
-    { name: "Wendenring", lat: 52.2587, lng: 10.5301, image: "images/route2.png" },
-    { name: "Kaiserstraße", lat: 52.2670, lng: 10.5357, image: "images/map.PNG" }
+    { name: "Schlossplatz", lat: 52.263435477338334, lng: 10.526912560591368, image: "images/Bilder-Kachel/Schlossplatz.jpg" },
+    { name: "Löwenwall", lat: 52.259965782185674, lng: 10.531160758482834, image: "images/Bilder-Kachel/Löwenwall.jpg" },
+    { name: "Kirschbaum-Allee", lat: 52.264140620822126, lng: 10.512969398257592, image: "images/Bilder-Kachel/Kirschbaum-Allee.png" },
+    { name: "Franki Bücherschrank", lat: 52.2640, lng: 10.5208, image: "images/Bilder-Kachel/Bücherschrank.gif" },
+    { name: "Weißes Ross", lat: 52.27258461526232, lng: 10.506436144762455, image: "images/Bilder-Kachel/Weißes Ross.png" },
+    { name: "Studentenwohnheim Michaelishof", lat: 52.26083589130686, lng: 10.5149323524782, image: "images/Bilder-Kachel/Michaelishof.jpg" },
+    { name: "Residenzschloss/Schlossarkaden", lat: 52.2646023240278, lng: 10.52876450569208, image: "images/Bilder-Kachel/Schlossarkaden.JPG" },
+    { name: "Walhalla", lat: 52.25067746950721, lng: 10.533116567820066, image: "images/Bilder-Kachel/FLINTA Sk8.jpg" },
+    { name: "Kolonialdenkmal an der Jasperallee", lat: 52.2697727011103, lng: 10.546490552228796, image: "images/Bilder-Kachel/Kolonialdenkmal.jpg" },
+    { name: "Wunderlauchfeld an der Ebertallee, Nussberg", lat: 52.27047411273886, lng: 10.556453251247943, image: "images/Bilder-Kachel/Wunderlauchfeld.jpeg" },
+    { name: "Nexus", lat: 52.250711891020686, lng: 10.510508213064814, image: "images/Bilder-Kachel/Nexus.jpg" },
+    { name: "Jahnstraße", lat: 52.24975405757498, lng: 10.505342923322987, image: "images/Bilder-Kachel/Jahnstraße.png" },
+    { name: "Naturhistorisches Museum", lat: 52.27529138046867, lng: 10.529079268744166, image: "images/Bilder-Kachel/Naturhistorisches Museum.jpg" },
+    { name: "Altstadtmarkt", lat: 52.2643, lng: 10.5241, image: "images/Bilder-Kachel/Altstadtmarkt.png" },
+    { name: "Wendenring", lat: 52.2587, lng: 10.5301, image: "images/Bilder-Kachel/Wendenring.png" },
+    { name: "Kaiserstraße", lat: 52.2670, lng: 10.5357, image: "images/Bilder-Kachel/Kaiserstraße.png" }
 ];
 
 function updateOverlay() {

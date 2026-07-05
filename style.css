@@ -148,7 +148,8 @@ a, a:active{
 }
 
 .card-container{
-
+    width:100%;
+    height:100%;
     margin-top:30px;
 
     display:flex;
@@ -160,20 +161,20 @@ a, a:active{
 }
 
 .place-card{
-    min-width:80vw;
-    min-height:60vh;
+    min-width: 80vw;
+    height: 90%;
 
     background:rgba(0, 0, 0, 1);
     color: white;
 
-    padding:20px;
+    padding:10px;
     
 
     scroll-snap-align:center;
 
     display:flex;
     flex-direction:column;
-    gap:12px;
+    gap:20px;
 
     text-decoration:none;
     cursor:pointer;
@@ -181,8 +182,10 @@ a, a:active{
 
 .place-image{
     width:100%;
-    height:100%;
+    height: 90%;
     object-fit:cover;
+    display:flex;
+    align-items:center;
 
 }
 
