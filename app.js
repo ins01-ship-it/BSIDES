@@ -68,6 +68,15 @@ function buildPlaceCards() {
             </div>
         </a>
     `).join("");
+
+    container.scrollLeft = 0;
+}
+
+function resetNearbyListPosition() {
+    const container = document.querySelector("#place-list");
+    if (!container) return;
+
+    container.scrollLeft = 0;
 }
 
 function sortPlaceCards(position) {
@@ -164,6 +173,7 @@ document.addEventListener("touchend", (e) => {
         nearbyOpen = true;
         homeOpen = false;
         updateOverlay();
+        resetNearbyListPosition();
 
         if (lastPosition) {
             sortPlaceCards(lastPosition);
