@@ -180,3 +180,4 @@ if (nearbyOpen === false && routeOpen === false) {
 } else if (homeOpen === false && nearbyOpen === false) {
     routeOpen = true;
 }
+
