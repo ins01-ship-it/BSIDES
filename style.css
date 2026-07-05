@@ -197,6 +197,7 @@ a, a:active{
     left:0;
     bottom:-100vh;
     padding:20px;
+    font-size:clamp(0.9rem, 2.2vw, 1.1rem);
 }
 
 .card-container{
