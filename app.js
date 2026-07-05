@@ -7,6 +7,7 @@ let startY = 0;
 let homeOpen = true;
 let routeOpen = false;
 let nearbyOpen = false;
+let lastPosition = null;
 
 const places = [
     { name: "Schlossplatz", lat: 52.263435477338334, lng: 10.526912560591368, image: "images/Bilder-Kachel/Schlossplatz.jpg" },
@@ -69,11 +70,15 @@ function buildPlaceCards() {
     `).join("");
 }
 
-function updatePlaceDistances(position) {
+function sortPlaceCards(position) {
+    const container = document.querySelector("#place-list");
+    if (!container) return;
+
+    const cards = Array.from(container.querySelectorAll(".place-card"));
+    if (!cards.length || !position) return;
+
     const userLat = position.coords.latitude;
     const userLng = position.coords.longitude;
-
-    const cards = document.querySelectorAll(".place-card");
 
     cards.forEach((card) => {
         const distanceEl = card.querySelector(".distance");
@@ -81,9 +86,19 @@ function updatePlaceDistances(position) {
 
         const lat = parseFloat(card.dataset.lat);
         const lng = parseFloat(card.dataset.lng);
-            const distance = getDistanceMeters(userLat, userLng, lat, lng);
-            distanceEl.textContent = formatDistance(distance);
+        const distance = getDistanceMeters(userLat, userLng, lat, lng);
+
+        card.dataset.distance = distance;
+        distanceEl.textContent = formatDistance(distance);
     });
+
+    cards.sort((a, b) => parseFloat(a.dataset.distance || 0) - parseFloat(b.dataset.distance || 0));
+    cards.forEach((card) => container.appendChild(card));
+}
+
+function updatePlaceDistances(position) {
+    lastPosition = position;
+    sortPlaceCards(position);
 }
 
 function showDistanceError() {
@@ -149,6 +164,15 @@ document.addEventListener("touchend", (e) => {
         nearbyOpen = true;
         homeOpen = false;
         updateOverlay();
+
+        if (lastPosition) {
+            sortPlaceCards(lastPosition);
+        } else if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(updatePlaceDistances, showDistanceError, {
+                enableHighAccuracy: true,
+                timeout: 10000
+            });
+        }
     }
 
     if (dy > 80 && homeOpen === false && nearbyOpen === true) {
