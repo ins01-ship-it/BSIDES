@@ -2,11 +2,32 @@
 @font-face {
     font-family: altehaas;
     src: url('../fonts/altehaas/AlteHaasGroteskRegular.ttf') format('truetype');
+     src: url('../fonts/altehaas/AlteHaasGroteskBold.ttf') format('truetype');
 }
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+p{
+    font-size: 8vw;
+    color: rgb(0, 0, 0);
+    align-items: center;
+    position: relative;
+    font-family: altehaas, bold;
+}
+
+.top-text{
+    top: 20%;
+    margin-left: 15%;
+    text-shadow: 5px 5px 10px rgb(194, 189, 189);
+}
+
+.bottom-text{
+    top: 60%;
+    right: 10%;
+   text-shadow: 5px 5px 10px rgb(194, 189, 189);
 }
 
 html,
@@ -95,7 +116,7 @@ a, a:active{
 #map-bg{
     position:absolute;
     inset: 0;
-
+    overflow: hidden;   
     display:flex;
     align-items:center;
     justify-content:center;
@@ -105,8 +126,39 @@ a, a:active{
 #map-bg img{
     height: 100%;
     width: 100%;
+
+     object-fit: cover;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) rotate(0deg);
+    transform-origin: center center;
+
+    transition: transform 0.15s linear;
+
+    
+    animation: colorshift 20s linear infinite;
 }
 
+
+
+
+
+@keyframes colorshift{
+    0%{
+        filter: invert(1);
+    }
+    50%{
+        filter: invert(0);
+    }
+    100%{
+        filter: invert(1);
+    }
+  
+    
+}
 #logo{
     position:absolute;
     inset:0;
@@ -115,7 +167,7 @@ a, a:active{
     flex-direction:column;
     justify-content:center;
     align-items:center;
-
+     
     gap:20px;
 }
 
@@ -244,6 +296,7 @@ a, a:active{
     position: absolute;
     height: 20vw;
     width: auto; 
+    filter: drop-shadow(0 0 0.3rem rgb(50, 49, 49));
 }
 #b{
     top: 40%;
@@ -454,3 +507,20 @@ a, a:active{
     top: 50%;
     right: 0;
 }
+
+#logo-text{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.top-text,
+.bottom-text{
+    position: absolute;
+    opacity: 1;
+}
+
+
+
+
+
