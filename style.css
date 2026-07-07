@@ -63,9 +63,7 @@ a, a:active{
     position: absolute;
     transform: scaleX(-1);
     left: 5vw;
-    z-index: 100;
     animation: arrowPulse 3s ease-in-out infinite;
-    animation-delay:1.5s;
 }
 .arrow2{
     position: relative;
@@ -73,7 +71,6 @@ a, a:active{
     transform: scaleX(-1);
     top: 20vw;
     animation: arrowPulse 3s ease-in-out infinite;
-    animation-delay:1.5s;
 }
 
 .arrow3{
@@ -84,16 +81,17 @@ a, a:active{
     transform: scaleX(-1);
     bottom: -50vw;
     animation: arrowPulse 3s ease-in-out infinite;
+    animation-delay: 1.5s;
 }
 
 .arrow4{
   rotate: 90deg;
-    scale: 0.8;
     transform:scaleX(-1);
     bottom: -50vw;
     left: -13vw;
     position: absolute;
     animation: arrowPulse 3s ease-in-out infinite;
+    animation-delay: 1.5s;
 }
 
 @keyframes arrowPulse {
@@ -240,6 +238,7 @@ a, a:active{
     top: 30px;
 
     overflow:auto;
+    z-index: 1000;
 }
 #routes h1{
     padding: 10%;
