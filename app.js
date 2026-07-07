@@ -64,13 +64,14 @@ function buildPlaceCards() {
     if (!container) return;
 
     container.innerHTML = places.map((place) => `
-        <a class="place-card" href="https://www.google.com/search?q=${encodeURIComponent(place.name + " Braunschweig")}" target="_blank" rel="noopener noreferrer" data-lat="${place.lat}" data-lng="${place.lng}">
+        <div class="place-card" data-lat="${place.lat}" data-lng="${place.lng}">
             <img class="place-image" src="${place.image || "images/path.jpg"}" alt="${place.name}" loading="lazy">
             <div class="place-content">
                 <h2>${place.name}</h2>
                 <p class="distance">Standort wird ermittelt…</p>
+                <a class="place-map-link" href="https://www.google.com/maps?q=${place.lat},${place.lng}" target="_blank" rel="noopener noreferrer">Wo?</a>
             </div>
-        </a>
+        </div>
     `).join("");
 
     container.scrollLeft = 0;

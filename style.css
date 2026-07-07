@@ -333,6 +333,27 @@ a, a:active{
     color:#e6e6e6;
 }
 
+.place-map-link{
+    display:inline-flex;
+    align-self:flex-start;
+    margin-top:2px;
+    padding:0.35rem 0.7rem;
+    border:1px solid #ffffff;
+    border-radius:999px;
+    color:#ffffff;
+    background:transparent;
+    font-size:0.9rem;
+    font-weight:700;
+    text-decoration:none;
+    transition:background 0.2s ease, color 0.2s ease;
+}
+
+.place-map-link:hover,
+.place-map-link:focus-visible{
+    background:#ffffff;
+    color:#000000;
+}
+
 @media (min-width: 768px) {
     .card-container {
         grid-auto-columns: minmax(min(32vw, 320px), 1fr);
