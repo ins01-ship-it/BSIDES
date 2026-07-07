@@ -19,7 +19,7 @@ const places = [
     { name: "Schlossarkaden", lat: 52.2646023240278, lng: 10.52876450569208, image: "images/Bilder-Kachel/Schlossarkaden.JPG" },
     { name: "Walhalla", lat: 52.25067746950721, lng: 10.533116567820066, image: "images/Bilder-Kachel/FLINTA Sk8.jpg" },
     { name: "Kolonialdenkmal an der Jasperallee", lat: 52.2697727011103, lng: 10.546490552228796, image: "images/Bilder-Kachel/Kolonialdenkmal.jpg" },
-    { name: "Wunderlauchfeld an der Ebertallee, Nussberg", lat: 52.27047411273886, lng: 10.556453251247943, image: "images/Bilder-Kachel/Wunderlauchfeld.jpeg" },
+    { name: "Wunderlauchfeld an der Ebertallee, Nussberg", lat: 52.26765299237686, lng: 10.561003331540446, image: "images/Bilder-Kachel/Wunderlauchfeld.jpeg" },
     { name: "Nexus", lat: 52.250711891020686, lng: 10.510508213064814, image: "images/Bilder-Kachel/Nexus.jpg" },
     { name: "Jahnstraße", lat: 52.24975405757498, lng: 10.505342923322987, image: "images/Bilder-Kachel/Jahnstraße.png" },
     { name: "Naturhistorisches Museum", lat: 52.27529138046867, lng: 10.529079268744166, image: "images/Bilder-Kachel/Naturhistorisches Museum.jpg" },
