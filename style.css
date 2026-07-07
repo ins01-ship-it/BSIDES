@@ -55,8 +55,26 @@ a, a:active{
     position:absolute;
     width:100vw;
     height:100vh;
+    
 }
 
+.arrow{
+    height: 10vw;
+    position: absolute;
+}
+
+.arrow3{
+    rotate: 90deg;
+    width: 80vw;
+    margin-top: 15vw;
+}
+
+.arrow4{
+    rotate: 90deg;
+    width: 99vw;
+    margin-top: -35vw;
+    scale: 0.8
+}
 /* HOME */
 
 #home{
