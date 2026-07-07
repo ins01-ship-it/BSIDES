@@ -24,9 +24,9 @@ const places = [
     { name: "Nexus", lat: 52.250711891020686, lng: 10.510508213064814, image: "images/Bilder-Kachel/Nexus.jpg" },
     { name: "Jahnstraße", lat: 52.24975405757498, lng: 10.505342923322987, image: "images/Bilder-Kachel/Jahnstraße.png" },
     { name: "Naturhistorisches Museum", lat: 52.27529138046867, lng: 10.529079268744166, image: "images/Bilder-Kachel/Naturhistorisches Museum.jpg" },
-    { name: "Altstadtmarkt", lat: 52.2643, lng: 10.5241, image: "images/Bilder-Kachel/Altstadtmarkt.png" },
-    { name: "Wendenring", lat: 52.2587, lng: 10.5301, image: "images/Bilder-Kachel/Wendenring.png" },
-    { name: "Kaiserstraße", lat: 52.2670, lng: 10.5357, image: "images/Bilder-Kachel/Kaiserstraße.png" }
+    { name: "Altstadtmarkt", lat: 52.2643, lng: 10.5241, image: "images/Bilder-Kachel/Atelier.jpg" },
+    { name: "Wendenring", lat: 52.2587, lng: 10.5301, image: "images/Bilder-Kachel/Rednerpult Prinzenpark.jpeg" },
+    { name: "Kaiserstraße", lat: 52.2670, lng: 10.5357, image: "images/Bilder-Kachel/Fliegerhorst.png" }
 ];
 
 function updateOverlay() {
