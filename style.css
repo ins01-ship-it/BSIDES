@@ -63,7 +63,6 @@ a, a:active{
     position: absolute;
     transform: scaleX(-1);
     left: 5vw;
-    z-index: 100;
     animation: arrowPulse 3s ease-in-out infinite;
 }
 .arrow2{
@@ -239,6 +238,7 @@ a, a:active{
     top: 30px;
 
     overflow:auto;
+    z-index: 1000;
 }
 #routes h1{
     padding: 10%;
