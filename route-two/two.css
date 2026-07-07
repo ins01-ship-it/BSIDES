@@ -1,6 +1,7 @@
 @font-face {
     font-family: altehaas;
     src: url('../fonts/altehaas/AlteHaasGroteskRegular.ttf') format('truetype');
+     src: url('../fonts/altehaas/AlteHaasGroteskBold.ttf') format('truetype');
 }
 
 *{
@@ -108,11 +109,13 @@ a:active{
     position: absolute;
     font-size: 20px;
     white-space: nowrap;
+    z-index: 2;
+    font-weight: bold;
 }
 
 #so1{
     margin-top: 27%;
-    margin-left: 13%;
+    margin-left: 8%;
     width: 160px;
 }
 #so2{
@@ -162,14 +165,14 @@ a:active{
     overflow: hidden;
     z-index: 0;
     mix-blend-mode: overlay;
-   
-    
-
+    opacity: 0.9;
 }
 .thumbnail img{
     width: 100%;
-    z-index: 10;
-     mix-blend-mode: soft-light;
+    z-index: 0;
+    filter: grayscale(100%);
+    mix-blend-mode: hard-light;
+    opacity: 0.9;
 }
 
 #th1{
@@ -177,61 +180,68 @@ a:active{
     height: 15%;
     margin-top: 5%;
     margin-left: 0%;
-    background-color: rgb(182, 127, 127);
-
-   
+    background-color: rgb(152, 208, 106);
 }
 #th2{
     width: 35%;
     height: 20%;
     margin-top: 49%;
     margin-left: 15%;
+    background-color: rgb(175, 202, 55);
 }
 #th3{
     width: 35%;
     height: 20%;
     margin-top: 30%;
     margin-left: 63%;
+    background-color: rgb(35, 92, 130);
 }
 #th4{
     width: 45%;
     height: 15%;
-    margin-top: 90%;
+    margin-top: 80%;
     margin-left: 45%;
+    background-color: rgb(245, 245, 46);
 }
 #th5{
     width: 45%;
     height: 15%;
     margin-top: 113%;
     margin-left: 10%;
+    background-color: rgb(138, 158, 83);
 }
 #th6{
     width: 35%;
     height: 20%;
     margin-top: 136%;
     margin-left: 65%;
+    background-color: rgb(132, 230, 255);
 }
 #th7{
     width: 35%;
     height: 20%;
     margin-top: 160%;
     margin-left: 55%;
+    background-color: rgb(110, 142, 255);
 }
 #th8{
     width: 45%;
     height: 15%;
     margin-top: 158%;
     margin-left: 3%;
+    background-color: rgb(224, 206, 134);
 }
 #th9{
     width: 45%;
     height: 15%;
     margin-top: 214%;
     margin-left: 0%;
+    background-color: rgb(192, 138, 106);
 }
 #th11{
     width: 35%;
     height: 25%;
     margin-top: 197%;
     margin-left: 50%;
+    background-color: rgb(108, 172, 235);
 }
