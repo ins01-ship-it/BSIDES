@@ -162,11 +162,14 @@ a:active{
     overflow: hidden;
     z-index: 0;
     mix-blend-mode: overlay;
+   
+    
 
 }
 .thumbnail img{
     width: 100%;
     z-index: 10;
+     mix-blend-mode: soft-light;
 }
 
 #th1{
@@ -174,6 +177,9 @@ a:active{
     height: 15%;
     margin-top: 5%;
     margin-left: 0%;
+    background-color: rgb(182, 127, 127);
+
+   
 }
 #th2{
     width: 35%;
