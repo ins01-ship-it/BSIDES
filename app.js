@@ -2,6 +2,7 @@ const routes = document.querySelector("#routes");
 const nearby = document.querySelector("#nearby");
 const logo = document.querySelector("#logo");
 const overlay = document.querySelector("#overlay");
+const arrows = document.querySelectorAll(".arrow, .arrow2, .arrow3, .arrow4");
 let startX = 0;
 let startY = 0;
 let homeOpen = true;
@@ -30,6 +31,9 @@ const places = [
 
 function updateOverlay() {
     overlay.style.opacity = homeOpen ? "0" : "1";
+    arrows.forEach((arrow) => {
+        arrow.style.opacity = homeOpen ? "1" : "0";
+    });
 }
 
 function toRad(value) {
