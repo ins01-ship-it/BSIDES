@@ -19,7 +19,7 @@ const places = [
     { name: "Michaelishof", lat: 52.26083589130686, lng: 10.5149323524782, image: "images/Bilder-Kachel/Michaelishof.jpg" },
     { name: "Schlossarkaden", lat: 52.2646023240278, lng: 10.52876450569208, image: "images/Bilder-Kachel/Schlossarkaden.png" },
     { name: "Walhalla", lat: 52.25067746950721, lng: 10.533116567820066, image: "images/Bilder-Kachel/Skate.gif" },
-    { name: "Kolonialdenkmal an der Jasperallee", lat: 52.2697727011103, lng: 10.546490552228796, image: "images/Bilder-Kachel/Kolonialdenkmal.jpg" },
+    { name: "Liberating the Monument", lat: 52.2697727011103, lng: 10.546490552228796, image: "images/Bilder-Kachel/Kolonialdenkmal.jpg" },
     { name: "Wunderlauchfeld an der Ebertallee, Nussberg", lat: 52.26765299237686, lng: 10.561003331540446, image: "images/Bilder-Kachel/Lauch.jpeg" },
     { name: "Nexus", lat: 52.250711891020686, lng: 10.510508213064814, image: "images/Bilder-Kachel/Nexus.jpg" },
     { name: "Jahnstraße", lat: 52.24975405757498, lng: 10.505342923322987, image: "images/Bilder-Kachel/Jahnstraße.png" },

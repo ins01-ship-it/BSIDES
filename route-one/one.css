@@ -23,7 +23,8 @@ h1{
 
 a{
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
+    mix-blend-mode: difference;
    
 }
 a:active{
@@ -111,34 +112,35 @@ a:active{
 }
 
 #so1{
-    margin-top: 27%;
-    margin-left: 10%;
+    margin-top: 6%;
+    margin-left: 8%;
     width: 160px;
 }
 #so2{
     margin-top: 49%;
-    margin-left: 20%;
+    margin-left: 18%;
 }
 #so3{
-    margin-top: 41%;
-    margin-left: 55%;
+    margin-top: 30%;
+    margin-left: 60%;
     width: 160px;
    
     transform: rotate(3deg);
 }
 #so4{
-    margin-top: 89%;
-    margin-left: 60%;
-    transform: rotate(90deg);
+    margin-top: 86%;
+    margin-left: 69%;
+    transform: rotate(50deg);
 
 }
 #so5{
-    margin-top: 100%;
+    margin-top: 115%;
     margin-left: 30%;
 }
 #so6{
-    margin-top: 135%;
-    margin-left: 65%;
+    margin-top: 124%;
+    margin-left: 58%;
+    transform: rotate(-20deg);
 }
 
 
@@ -154,6 +156,7 @@ a:active{
     opacity: 0.7;
     filter: grayscale(100%);
     mix-blend-mode: hard-light;
+    mix-blend-mode: difference;
 }
 
 .route-link{
@@ -169,7 +172,7 @@ a:active{
     height: 15%;
     margin-top: 5%;
     margin-left: 0%;
-    background-color: rgb(109, 172, 255);
+    background-color: rgb(154, 197, 255);
 }
 #th2{
     width: 35%;
@@ -183,28 +186,28 @@ a:active{
     height: 20%;
     margin-top: 30%;
     margin-left: 63%;
-    background-color: rgb(35, 92, 130);
+    background-color: rgb(253, 240, 162);
 }
 #th4{
     width: 45%;
     height: 15%;
     margin-top: 90%;
     margin-left: 45%;
-    background-color: rgb(151, 211, 173);
+    background-color: rgb(183, 255, 209);
 }
 #th5{
     width: 45%;
     height: 15%;
     margin-top: 113%;
     margin-left: 10%;
-    background-color: rgb(121, 211, 106);
+    background-color: rgb(174, 255, 159);
 }
 #th6{
     width: 35%;
     height: 13%;
     margin-top: 127%;
     margin-left: 65%;
-    background-color: rgb(197, 239, 98);
+    background-color: rgb(255, 194, 246);
     padding-bottom: 50px;
 }
 
