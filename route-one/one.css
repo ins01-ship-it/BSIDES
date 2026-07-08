@@ -1,6 +1,7 @@
 @font-face {
     font-family: altehaas;
     src: url('../fonts/altehaas/AlteHaasGroteskRegular.ttf') format('truetype');
+     src: url('../fonts/altehaas/AlteHaasGroteskBold.ttf') format('truetype');
 }
 
 *{
@@ -22,7 +23,8 @@ h1{
 
 a{
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
+    mix-blend-mode: difference;
    
 }
 a:active{
@@ -106,56 +108,63 @@ a:active{
     position: absolute;
     font-size: 20px;
     white-space: nowrap;
+    font-weight: bold;
 }
 
 #so1{
-    margin-top: 5%;
-    margin-left: 10%;
+    margin-top: 6%;
+    margin-left: 8%;
     width: 160px;
-    transform: rotate(-6deg);
 }
 #so2{
     margin-top: 49%;
-    margin-left: 25%;
+    margin-left: 18%;
 }
 #so3{
-    margin-top: 41%;
-    margin-left: 55%;
+    margin-top: 30%;
+    margin-left: 60%;
     width: 160px;
    
     transform: rotate(3deg);
 }
 #so4{
-    margin-top: 80%;
-    margin-left: 60%;
-    transform: rotate(10deg);
-    width: 100px;
+    margin-top: 86%;
+    margin-left: 69%;
+    transform: rotate(50deg);
 
 }
 #so5{
-    margin-top: 113%;
-    margin-left: 32%;
-    transform: rotate(-20deg);
-    width: 150px;
-    margin-left: 50px;
+    margin-top: 115%;
+    margin-left: 30%;
 }
 #so6{
-    margin-top: 130%;
-    margin-left: 65%;
-    transform: rotate(4deg);
+    margin-top: 124%;
+    margin-left: 58%;
+    transform: rotate(-20deg);
 }
 
 
 .thumbnail{
     position: absolute;
     overflow: hidden;
-    filter:grayscale(100%);
     z-index: -1;
+    mix-blend-mode: overlay;
 }
 .thumbnail img{
     width: 100%;
     height: 100%;
-    mix-blend-mode: luminosity;
+    opacity: 0.7;
+    filter: grayscale(100%);
+    mix-blend-mode: hard-light;
+    mix-blend-mode: difference;
+}
+
+.route-link{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    color: black
 }
 
 #th1{
@@ -163,35 +172,60 @@ a:active{
     height: 15%;
     margin-top: 5%;
     margin-left: 0%;
-    filter:grayscale(100%);
+    background-color: rgb(154, 197, 255);
 }
 #th2{
     width: 35%;
     height: 20%;
     margin-top: 49%;
     margin-left: 15%;
+    background-color: rgb(101, 145, 173);
 }
 #th3{
     width: 35%;
     height: 20%;
     margin-top: 30%;
     margin-left: 63%;
+    background-color: rgb(253, 240, 162);
 }
 #th4{
     width: 45%;
     height: 15%;
     margin-top: 90%;
     margin-left: 45%;
+    background-color: rgb(183, 255, 209);
 }
 #th5{
     width: 45%;
     height: 15%;
     margin-top: 113%;
     margin-left: 10%;
+    background-color: rgb(174, 255, 159);
 }
 #th6{
     width: 35%;
     height: 13%;
     margin-top: 127%;
     margin-left: 65%;
+    background-color: rgb(255, 194, 246);
+    padding-bottom: 50px;
+}
+
+footer{
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    color: white;
+    justify-content: center;
+    text-align: center; 
+    margin-top: 100px;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 50px;
 }

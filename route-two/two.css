@@ -1,6 +1,7 @@
 @font-face {
     font-family: altehaas;
     src: url('../fonts/altehaas/AlteHaasGroteskRegular.ttf') format('truetype');
+     src: url('../fonts/altehaas/AlteHaasGroteskBold.ttf') format('truetype');
 }
 
 *{
@@ -23,7 +24,8 @@ h1{
 
 a{
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    mix-blend-mode: difference;
 }
 a:active{
     text-decoration: none;
@@ -108,20 +110,22 @@ a:active{
     position: absolute;
     font-size: 20px;
     white-space: nowrap;
+    z-index: 2;
+    font-weight: bold;
 }
 
 #so1{
     margin-top: 27%;
-    margin-left: 13%;
+    margin-left: 8%;
     width: 160px;
 }
 #so2{
-    margin-top: 47%;
+    margin-top: 49%;
     margin-left: 20%;
 }
 #so3{
-    margin-top: 39%;
-    margin-left: 50%;
+    margin-top: 34%;
+    margin-left: 69%;
 }
 #so4{
     margin-top: 92%;
@@ -130,7 +134,7 @@ a:active{
 }
 #so5{
     margin-top: 113%;
-    margin-left: 32%;
+    margin-left: 24%;
     transform: rotate(180deg);
 }
 #so6{
@@ -143,8 +147,8 @@ a:active{
     transform: rotate(180deg);
 }
 #so8{
-    margin-top: 158%;
-    margin-left: 3%;
+    margin-top: 168%;
+    margin-left: 25%;
 }
 #so9{
     margin-top: 214%;
@@ -162,11 +166,14 @@ a:active{
     overflow: hidden;
     z-index: 0;
     mix-blend-mode: overlay;
-
+    opacity: 0.9;
 }
 .thumbnail img{
     width: 100%;
-    z-index: 10;
+    z-index: 0;
+    filter: grayscale(100%);
+    mix-blend-mode: difference;
+    opacity: 0.9;
 }
 
 #th1{
@@ -174,58 +181,88 @@ a:active{
     height: 15%;
     margin-top: 5%;
     margin-left: 0%;
+    background-color: rgb(204, 255, 163);
 }
 #th2{
     width: 35%;
     height: 20%;
     margin-top: 49%;
     margin-left: 15%;
+    background-color: rgb(205, 143, 183);
 }
 #th3{
     width: 35%;
     height: 20%;
     margin-top: 30%;
     margin-left: 63%;
+    background-color: rgb(113, 173, 213);
 }
 #th4{
     width: 45%;
     height: 15%;
-    margin-top: 90%;
+    margin-top: 80%;
     margin-left: 45%;
+    background-color: rgb(255, 255, 162);
 }
 #th5{
     width: 45%;
     height: 15%;
     margin-top: 113%;
     margin-left: 10%;
+    background-color: rgb(255, 255, 255);
 }
 #th6{
     width: 35%;
     height: 20%;
     margin-top: 136%;
     margin-left: 65%;
+    background-color: rgb(132, 230, 255);
 }
 #th7{
     width: 35%;
     height: 20%;
     margin-top: 160%;
     margin-left: 55%;
+    background-color: rgb(110, 142, 255);
 }
 #th8{
     width: 45%;
     height: 15%;
     margin-top: 158%;
     margin-left: 3%;
+    background-color: rgb(255, 182, 239);
 }
 #th9{
     width: 45%;
     height: 15%;
     margin-top: 214%;
     margin-left: 0%;
+    background-color: rgb(255, 195, 160);
 }
 #th11{
     width: 35%;
-    height: 25%;
+    height: 12%;
     margin-top: 197%;
     margin-left: 50%;
+    background-color: rgb(108, 172, 235);
+    padding-bottom: 50px;
+}
+
+footer{
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    color: white;
+    justify-content: center;
+    text-align: center; 
+    margin-top: 100px;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 50px;
 }
