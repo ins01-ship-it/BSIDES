@@ -14,7 +14,7 @@ const places = [
     { name: "Schlossplatz", lat: 52.263435477338334, lng: 10.526912560591368, image: "images/Bilder-Kachel/Schlossplatz.jpg", link: "placeholder.html?place=schlossplatz" },
     { name: "Löwenwall", lat: 52.259965782185674, lng: 10.531160758482834, image: "images/Bilder-Kachel/Löwenwall.jpg", link: "placeholder.html?place=loewenwall" },
     { name: "Kirschbaum-Allee", lat: 52.264140620822126, lng: 10.512969398257592, image: "images/Bilder-Kachel/Kirschbaum-Allee.jpeg", link: "placeholder.html?place=kirschbaum-allee" },
-    { name: "Franki Bücherschrank", lat: 52.2640, lng: 10.5208, image: "images/Bilder-Kachel/Bücherschrank.gif", link: "placeholder.html?place=franki-buecherschrank" },
+    { name: "Franki Bücherschrank", lat: 52.253462923702884, lng: 10.510528496151975, image: "images/Bilder-Kachel/Bücherschrank.gif", link: "placeholder.html?place=franki-buecherschrank" },
     { name: "Weißes Ross", lat: 52.27258461526232, lng: 10.506436144762455, image: "images/Bilder-Kachel/Ross.png", link: "placeholder.html?place=weisses-ross" },
     { name: "Michaelishof", lat: 52.26083589130686, lng: 10.5149323524782, image: "images/Bilder-Kachel/Michaelishof.jpg", link: "placeholder.html?place=michaelishof" },
     { name: "Schlossarkaden", lat: 52.2646023240278, lng: 10.52876450569208, image: "images/Bilder-Kachel/Schlossarkaden.png", link: "placeholder.html?place=schlossarkaden" },
@@ -24,9 +24,9 @@ const places = [
     { name: "Nexus", lat: 52.250711891020686, lng: 10.510508213064814, image: "images/Bilder-Kachel/Nexus.jpg", link: "placeholder.html?place=nexus" },
     { name: "Jahnstraße", lat: 52.24975405757498, lng: 10.505342923322987, image: "images/Bilder-Kachel/jahnstraße.png", link: "placeholder.html?place=jahnstrasse" },
     { name: "Naturhistorisches Museum", lat: 52.27529138046867, lng: 10.529079268744166, image: "images/Bilder-Kachel/Naturhistorisches Museum.jpg", link: "placeholder.html?place=naturhistorisches-museum" },
-    { name: "Das Atelier", lat: 52.2643, lng: 10.5241, image: "images/Bilder-Kachel/Atelier.jpg", link: "placeholder.html?place=das-atelier" },
-    { name: "Wendenring", lat: 52.2587, lng: 10.5301, image: "images/Bilder-Kachel/Rednerpult Prinzenpark.jpeg", link: "placeholder.html?place=wendenring" },
-    { name: "Fliegerhorst", lat: 52.2670, lng: 10.5357, image: "images/Bilder-Kachel/stig.jpg", link: "placeholder.html?place=fliegerhorst" }
+    { name: "Das Atelier", lat: 52.26040284877345, lng: 10.535146627884695, image: "images/Bilder-Kachel/Atelier.jpg", link: "placeholder.html?place=das-atelier" },
+    { name: "Rednerpult Prinzenpark", lat: 52.27170497738349, lng: 10.553943008212302, image: "images/Bilder-Kachel/Rednerpult Prinzenpark.jpeg", link: "placeholder.html?place=wendenring" },
+    { name: "Fliegerhorst", lat: 52.250863376843604, lng: 10.491093573006431, image: "images/Bilder-Kachel/stig.jpg", link: "placeholder.html?place=fliegerhorst" }
 ];
 
 function updateOverlay() {
