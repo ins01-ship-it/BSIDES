@@ -51,7 +51,28 @@
 
     </section>
 
+    <script>
+        const swipeThreshold = 80;
+        let startX = 0;
+        let startY = 0;
 
+        document.addEventListener('touchstart', (event) => {
+            const touch = event.touches[0];
+            startX = touch.clientX;
+            startY = touch.clientY;
+        }, { passive: true });
+
+        document.addEventListener('touchend', (event) => {
+            const touch = event.changedTouches[0];
+            const deltaX = touch.clientX - startX;
+            const deltaY = touch.clientY - startY;
+
+            if (deltaX > swipeThreshold && Math.abs(deltaX) > Math.abs(deltaY)) {
+                sessionStorage.setItem('bsides-open-section', 'routes');
+                window.location.replace('../main.html');
+            }
+        }, { passive: true });
+    </script>
 
 </body>
 </html>

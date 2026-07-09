@@ -36,6 +36,44 @@ function updateOverlay() {
     });
 }
 
+function openRoutesSection() {
+    routes.style.transition = "0.4s";
+    routes.style.left = "0";
+    logo.style.transition = "0.4s";
+    logo.style.opacity = "0";
+
+    routeOpen = true;
+    homeOpen = false;
+    nearbyOpen = false;
+    updateOverlay();
+}
+
+function openHomeSection() {
+    routes.style.transition = "0.4s";
+    routes.style.left = "100vw";
+    nearby.style.transition = "0.4s";
+    nearby.style.top = "100vh";
+    logo.style.transition = "0.4s";
+    logo.style.opacity = "1";
+
+    routeOpen = false;
+    nearbyOpen = false;
+    homeOpen = true;
+    updateOverlay();
+}
+
+function openNearbySection() {
+    nearby.style.transition = "0.4s";
+    nearby.style.top = "0";
+    logo.style.transition = "0.4s";
+    logo.style.opacity = "0";
+
+    nearbyOpen = true;
+    homeOpen = false;
+    routeOpen = false;
+    updateOverlay();
+}
+
 function toRad(value) {
     return value * Math.PI / 180;
 }
@@ -124,6 +162,12 @@ function showDistanceError() {
 buildPlaceCards();
 updateOverlay();
 
+const requestedSection = sessionStorage.getItem("bsides-open-section");
+if (requestedSection === "routes") {
+    openRoutesSection();
+    sessionStorage.removeItem("bsides-open-section");
+}
+
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
         updatePlaceDistances(position);
@@ -148,36 +192,15 @@ document.addEventListener("touchend", (e) => {
     let dy = endY - startY;
 
     if (dx < -80 && homeOpen === true) {
-        routes.style.transition = "0.4s";
-        routes.style.left = "0";
-        logo.style.transition = "0.4s";
-        logo.style.opacity = "0";
-
-        routeOpen = true;
-        homeOpen = false;
-        updateOverlay();
+        openRoutesSection();
     }
 
     if (dx > 80 && homeOpen === false && routeOpen === true) {
-        routes.style.transition = "0.4s";
-        routes.style.left = "100vw";
-        logo.style.transition = "0.4s";
-        logo.style.opacity = "1";
-
-        routeOpen = false;
-        homeOpen = true;
-        updateOverlay();
+        openHomeSection();
     }
 
     if (dy < -80 && homeOpen === true) {
-        nearby.style.transition = "0.4s";
-        nearby.style.top = "0";
-        logo.style.transition = "0.4s";
-        logo.style.opacity = "0";
-
-        nearbyOpen = true;
-        homeOpen = false;
-        updateOverlay();
+        openNearbySection();
         resetNearbyListPosition();
 
         if (lastPosition) {
@@ -191,14 +214,7 @@ document.addEventListener("touchend", (e) => {
     }
 
     if (dy > 80 && homeOpen === false && nearbyOpen === true) {
-        nearby.style.transition = "0.4s";
-        nearby.style.top = "100vh";
-        logo.style.transition = "0.4s";
-        logo.style.opacity = "1";
-
-        nearbyOpen = false;
-        homeOpen = true;
-        updateOverlay();
+        openHomeSection();
     }
 });
 
