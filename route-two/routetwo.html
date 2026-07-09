@@ -58,39 +58,7 @@
 
     </section>
 
-    <script>
-        (function () {
-            let startX = 0;
-            let startY = 0;
-            const swipeThreshold = 80;
-            const maxVerticalDistance = 45;
-
-            function getPoint(event) {
-                return event.touches ? event.touches[0] : event;
-            }
-
-            function onSwipeStart(event) {
-                const point = getPoint(event);
-                startX = point.clientX;
-                startY = point.clientY;
-            }
-
-            function onSwipeEnd(event) {
-                const point = getPoint(event.changedTouches ? { touches: event.changedTouches } : event);
-                const deltaX = point.clientX - startX;
-                const deltaY = point.clientY - startY;
-
-                if (deltaX > swipeThreshold && Math.abs(deltaY) < maxVerticalDistance) {
-                    window.location.href = '../main.html#routes';
-                }
-            }
-
-            document.addEventListener('touchstart', onSwipeStart, { passive: true });
-            document.addEventListener('touchend', onSwipeEnd, { passive: true });
-            document.addEventListener('mousedown', onSwipeStart);
-            document.addEventListener('mouseup', onSwipeEnd);
-        })();
-    </script>
+  
 
 </body>
 </html>
