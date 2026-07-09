@@ -302,7 +302,7 @@ a, a:active{
     gap:12px;
 
     text-decoration:none;
-    cursor:pointer;
+   
     overflow:hidden;
     z-index: 10;
 }
