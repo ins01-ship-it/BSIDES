@@ -11,22 +11,22 @@ let nearbyOpen = false;
 let lastPosition = null;
 
 const places = [
-    { name: "Schlossplatz", lat: 52.263435477338334, lng: 10.526912560591368, image: "images/Bilder-Kachel/Schlossplatz.jpg", link: "placeholder.html?place=schlossplatz" },
-    { name: "Löwenwall", lat: 52.259965782185674, lng: 10.531160758482834, image: "images/Bilder-Kachel/Löwenwall.jpg", link: "placeholder.html?place=loewenwall" },
-    { name: "Kirschbaum-Allee", lat: 52.264140620822126, lng: 10.512969398257592, image: "images/Bilder-Kachel/Kirschbaum-Allee.jpeg", link: "placeholder.html?place=kirschbaum-allee" },
+    { name: "Raum für Protest", lat: 52.263435477338334, lng: 10.526912560591368, image: "images/Bilder-Kachel/Schlossplatz.jpg", link: "placeholder.html?place=schlossplatz" },
+    { name: "Trinkpause am Löwenwall", lat: 52.259965782185674, lng: 10.531160758482834, image: "images/Bilder-Kachel/Löwenwall.jpg", link: "placeholder.html?place=loewenwall" },
+    { name: "If I keep moving, will it keep following me?", lat: 52.264140620822126, lng: 10.512969398257592, image: "images/Bilder-Kachel/Kirschbaum-Allee.jpeg", link: "placeholder.html?place=kirschbaum-allee" },
     { name: "Franki Bücherschrank", lat: 52.253462923702884, lng: 10.510528496151975, image: "images/Bilder-Kachel/Bücherschrank.gif", link: "placeholder.html?place=franki-buecherschrank" },
-    { name: "Weißes Ross", lat: 52.27258461526232, lng: 10.506436144762455, image: "images/Bilder-Kachel/Ross.png", link: "placeholder.html?place=weisses-ross" },
-    { name: "Michaelishof", lat: 52.26083589130686, lng: 10.5149323524782, image: "images/Bilder-Kachel/Michaelishof.jpg", link: "placeholder.html?place=michaelishof" },
-    { name: "Schlossarkaden", lat: 52.2646023240278, lng: 10.52876450569208, image: "images/Bilder-Kachel/Schlossarkaden.png", link: "placeholder.html?place=schlossarkaden" },
-    { name: "Walhalla", lat: 52.25067746950721, lng: 10.533116567820066, image: "images/Bilder-Kachel/Skate.gif", link: "placeholder.html?place=walhalla" },
+    { name: "Keine Pferde am weißen Ross", lat: 52.27258461526232, lng: 10.506436144762455, image: "images/Bilder-Kachel/Ross.png", link: "placeholder.html?place=weisses-ross" },
+    { name: "Holzköpfe: Wie sehen Studenten aus?", lat: 52.26083589130686, lng: 10.5149323524782, image: "images/Bilder-Kachel/Michaelishof.jpg", link: "placeholder.html?place=michaelishof" },
+    { name: "Ebenen der Zugänglichkeit", lat: 52.2646023240278, lng: 10.52876450569208, image: "images/Bilder-Kachel/Schlossarkaden.png", link: "placeholder.html?place=schlossarkaden" },
+    { name: "FLINTA* Sk8 @Braunschweig", lat: 52.25067746950721, lng: 10.533116567820066, image: "images/Bilder-Kachel/Skate.gif", link: "placeholder.html?place=walhalla" },
     { name: "Liberating the Monument", lat: 52.2697727011103, lng: 10.546490552228796, image: "images/Bilder-Kachel/Kolonialdenkmal.jpg", link: "placeholder.html?place=liberating-the-monument" },
-    { name: "Wunderlauchfeld an der Ebertallee, Nussberg", lat: 52.26765299237686, lng: 10.561003331540446, image: "images/Bilder-Kachel/Lauch.jpeg", link: "placeholder.html?place=wunderlauchfeld" },
-    { name: "Nexus", lat: 52.250711891020686, lng: 10.510508213064814, image: "images/Bilder-Kachel/Nexus.jpg", link: "placeholder.html?place=nexus" },
-    { name: "Jahnstraße", lat: 52.24975405757498, lng: 10.505342923322987, image: "images/Bilder-Kachel/jahnstraße.png", link: "placeholder.html?place=jahnstrasse" },
-    { name: "Naturhistorisches Museum", lat: 52.27529138046867, lng: 10.529079268744166, image: "images/Bilder-Kachel/Naturhistorisches Museum.jpg", link: "placeholder.html?place=naturhistorisches-museum" },
+    { name: "Wunderlauch und andere Wunder", lat: 52.26765299237686, lng: 10.561003331540446, image: "images/Bilder-Kachel/Lauch.jpeg", link: "placeholder.html?place=wunderlauchfeld" },
+    { name: "Feiern für alle. Solidarisch und unkomerziell", lat: 52.250711891020686, lng: 10.510508213064814, image: "images/Bilder-Kachel/Nexus.jpg", link: "placeholder.html?place=nexus" },
+    { name: "Die Bronx von Braunschweig", lat: 52.24975405757498, lng: 10.505342923322987, image: "images/Bilder-Kachel/jahnstraße.png", link: "placeholder.html?place=jahnstrasse" },
+    { name: "Extinction Club!", lat: 52.27529138046867, lng: 10.529079268744166, image: "images/Bilder-Kachel/Naturhistorisches Museum.jpg", link: "placeholder.html?place=naturhistorisches-museum" },
     { name: "Das Atelier", lat: 52.26040284877345, lng: 10.535146627884695, image: "images/Bilder-Kachel/Atelier.jpg", link: "placeholder.html?place=das-atelier" },
-    { name: "Rednerpult Prinzenpark", lat: 52.27170497738349, lng: 10.553943008212302, image: "images/Bilder-Kachel/Rednerpult Prinzenpark.jpeg", link: "placeholder.html?place=wendenring" },
-    { name: "Fliegerhorst", lat: 52.250863376843604, lng: 10.491093573006431, image: "images/Bilder-Kachel/stig.jpg", link: "placeholder.html?place=fliegerhorst" }
+    { name: "Rednerpult im Prinzenpark", lat: 52.27170497738349, lng: 10.553943008212302, image: "images/Bilder-Kachel/Rednerpult Prinzenpark.jpeg", link: "placeholder.html?place=wendenring" },
+    { name: "Fliegerhorst Broitzem im Wandel der Zeit", lat: 52.250863376843604, lng: 10.491093573006431, image: "images/Bilder-Kachel/stig.jpg", link: "placeholder.html?place=fliegerhorst" }
 ];
 
 function updateOverlay() {
