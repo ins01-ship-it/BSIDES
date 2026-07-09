@@ -11,22 +11,22 @@ let nearbyOpen = false;
 let lastPosition = null;
 
 const places = [
-    { name: "Schlossplatz", lat: 52.263435477338334, lng: 10.526912560591368, image: "images/Bilder-Kachel/Schlossplatz.jpg" },
-    { name: "Löwenwall", lat: 52.259965782185674, lng: 10.531160758482834, image: "images/Bilder-Kachel/Löwenwall.jpg" },
-    { name: "Kirschbaum-Allee", lat: 52.264140620822126, lng: 10.512969398257592, image: "images/Bilder-Kachel/Kirschbaum-Allee.jpeg" },
-    { name: "Franki Bücherschrank", lat: 52.2640, lng: 10.5208, image: "images/Bilder-Kachel/Bücherschrank.gif" },
-    { name: "Weißes Ross", lat: 52.27258461526232, lng: 10.506436144762455, image: "images/Bilder-Kachel/Ross.png" },
-    { name: "Michaelishof", lat: 52.26083589130686, lng: 10.5149323524782, image: "images/Bilder-Kachel/Michaelishof.jpg" },
-    { name: "Schlossarkaden", lat: 52.2646023240278, lng: 10.52876450569208, image: "images/Bilder-Kachel/Schlossarkaden.png" },
-    { name: "Walhalla", lat: 52.25067746950721, lng: 10.533116567820066, image: "images/Bilder-Kachel/Skate.gif" },
-    { name: "Liberating the Monument", lat: 52.2697727011103, lng: 10.546490552228796, image: "images/Bilder-Kachel/Kolonialdenkmal.jpg" },
-    { name: "Wunderlauchfeld an der Ebertallee, Nussberg", lat: 52.26765299237686, lng: 10.561003331540446, image: "images/Bilder-Kachel/Lauch.jpeg" },
-    { name: "Nexus", lat: 52.250711891020686, lng: 10.510508213064814, image: "images/Bilder-Kachel/Nexus.jpg" },
-    { name: "Jahnstraße", lat: 52.24975405757498, lng: 10.505342923322987, image: "images/Bilder-Kachel/jahnstraße.png" },
-    { name: "Naturhistorisches Museum", lat: 52.27529138046867, lng: 10.529079268744166, image: "images/Bilder-Kachel/Naturhistorisches Museum.jpg" },
-    { name: "Das Atelier", lat: 52.2643, lng: 10.5241, image: "images/Bilder-Kachel/Atelier.jpg" },
-    { name: "Wendenring", lat: 52.2587, lng: 10.5301, image: "images/Bilder-Kachel/Rednerpult Prinzenpark.jpeg" },
-    { name: "Fliegerhorst", lat: 52.2670, lng: 10.5357, image: "images/Bilder-Kachel/stig.jpg" }
+    { name: "Schlossplatz", lat: 52.263435477338334, lng: 10.526912560591368, image: "images/Bilder-Kachel/Schlossplatz.jpg", link: "placeholder.html?place=schlossplatz" },
+    { name: "Löwenwall", lat: 52.259965782185674, lng: 10.531160758482834, image: "images/Bilder-Kachel/Löwenwall.jpg", link: "placeholder.html?place=loewenwall" },
+    { name: "Kirschbaum-Allee", lat: 52.264140620822126, lng: 10.512969398257592, image: "images/Bilder-Kachel/Kirschbaum-Allee.jpeg", link: "placeholder.html?place=kirschbaum-allee" },
+    { name: "Franki Bücherschrank", lat: 52.2640, lng: 10.5208, image: "images/Bilder-Kachel/Bücherschrank.gif", link: "placeholder.html?place=franki-buecherschrank" },
+    { name: "Weißes Ross", lat: 52.27258461526232, lng: 10.506436144762455, image: "images/Bilder-Kachel/Ross.png", link: "placeholder.html?place=weisses-ross" },
+    { name: "Michaelishof", lat: 52.26083589130686, lng: 10.5149323524782, image: "images/Bilder-Kachel/Michaelishof.jpg", link: "placeholder.html?place=michaelishof" },
+    { name: "Schlossarkaden", lat: 52.2646023240278, lng: 10.52876450569208, image: "images/Bilder-Kachel/Schlossarkaden.png", link: "placeholder.html?place=schlossarkaden" },
+    { name: "Walhalla", lat: 52.25067746950721, lng: 10.533116567820066, image: "images/Bilder-Kachel/Skate.gif", link: "placeholder.html?place=walhalla" },
+    { name: "Liberating the Monument", lat: 52.2697727011103, lng: 10.546490552228796, image: "images/Bilder-Kachel/Kolonialdenkmal.jpg", link: "placeholder.html?place=liberating-the-monument" },
+    { name: "Wunderlauchfeld an der Ebertallee, Nussberg", lat: 52.26765299237686, lng: 10.561003331540446, image: "images/Bilder-Kachel/Lauch.jpeg", link: "placeholder.html?place=wunderlauchfeld" },
+    { name: "Nexus", lat: 52.250711891020686, lng: 10.510508213064814, image: "images/Bilder-Kachel/Nexus.jpg", link: "placeholder.html?place=nexus" },
+    { name: "Jahnstraße", lat: 52.24975405757498, lng: 10.505342923322987, image: "images/Bilder-Kachel/jahnstraße.png", link: "placeholder.html?place=jahnstrasse" },
+    { name: "Naturhistorisches Museum", lat: 52.27529138046867, lng: 10.529079268744166, image: "images/Bilder-Kachel/Naturhistorisches Museum.jpg", link: "placeholder.html?place=naturhistorisches-museum" },
+    { name: "Das Atelier", lat: 52.2643, lng: 10.5241, image: "images/Bilder-Kachel/Atelier.jpg", link: "placeholder.html?place=das-atelier" },
+    { name: "Wendenring", lat: 52.2587, lng: 10.5301, image: "images/Bilder-Kachel/Rednerpult Prinzenpark.jpeg", link: "placeholder.html?place=wendenring" },
+    { name: "Fliegerhorst", lat: 52.2670, lng: 10.5357, image: "images/Bilder-Kachel/stig.jpg", link: "placeholder.html?place=fliegerhorst" }
 ];
 
 function updateOverlay() {
@@ -102,7 +102,7 @@ function buildPlaceCards() {
     if (!container) return;
 
     container.innerHTML = places.map((place) => `
-        <div class="place-card" data-lat="${place.lat}" data-lng="${place.lng}">
+        <div class="place-card" data-link="${place.link || "placeholder.html"}" data-lat="${place.lat}" data-lng="${place.lng}">
             <img class="place-image" src="${place.image || "images/path.jpg"}" alt="${place.name}" loading="lazy">
             <div class="place-content">
                 <h2>${place.name}</h2>
@@ -114,6 +114,21 @@ function buildPlaceCards() {
 
     container.scrollLeft = 0;
 }
+
+function handlePlaceCardClick(event) {
+    const linkButton = event.target.closest(".place-map-link");
+    if (linkButton) {
+        event.stopPropagation();
+        return;
+    }
+
+    const card = event.target.closest(".place-card");
+    if (card) {
+        window.location.href = card.dataset.link || "placeholder.html";
+    }
+}
+
+document.addEventListener("click", handlePlaceCardClick);
 
 function resetNearbyListPosition() {
     const container = document.querySelector("#place-list");

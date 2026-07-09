@@ -304,6 +304,7 @@ a, a:active{
     text-decoration:none;
     cursor:pointer;
     overflow:hidden;
+    z-index: 10;
 }
 
 .place-image{
