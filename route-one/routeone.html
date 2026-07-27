@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BSides</title>
+
+<link rel="stylesheet" href="one.css">
+</head>
+
+<body>
+
+    <section class="screen">
+
+        <div id="map-bg">
+            <img src="../images/maptrans.PNG" alt="Map Background">
+            <img id="route1" src="../images/route1.PNG" alt="Route 1">
+        </div>
+        <h1 class="screen">1</h1>
+
+        <div id="path-bg">
+            <img src="../images/path.jpg" alt="path background">
+
+            <a id="so1" class="standort" href="...">Michaelishof</a>
+            <a id="so2" class="standort" href="...">Kirschbaum-<br>Allee</a>
+            <a id="so3" class="standort" href="...">Schlossarkaden</a>
+            <a id="so4" class="standort" href="...">Schlossplatz</a>
+            <a id="so5" class="standort" href="...">Löwenwall</a>
+            <a id="so6" class="standort" href="...">Das Atelier</a>
+
+            <div id="th1" class="thumbnail"><a href="..."><img src="../images/Bilder-Kachel/Michaelishof.jpg" alt="1. Michaelishof"></a></div>
+            <div id="th2" class="thumbnail"><a href="..."><img src="../images/Bilder-Kachel/Kirschbaum-Allee.jpeg" alt="2. Kirschbaum-Allee"></a></div>
+            <div id="th3" class="thumbnail"><a href="..."><img src="../images/Bilder-Kachel/Schlossarkaden.JPG" alt="3. Schloss"></a></div>
+            <div id="th4" class="thumbnail"><a href="..."><img src="../images/Bilder-Kachel/Schlossplatz.jpg" alt="4. Schlossplatz"></a></div>
+            <div id="th5" class="thumbnail"><a href="..."><img src="../images/Bilder-Kachel/Löwenwall.jpg" alt="5. Löwenwall"></a></div>
+            <div id="th6" class="thumbnail"><a href="..."><img src="../images/Bilder-Kachel/Atelier.jpg" alt="6. Das Atelier"></a></div>
+
+
+        </div>
+
+    </section>
+
+        <section id="overlay" class="screen">
+
+        <img class="cross" id="ctopleft" src="../images/cross1.PNG" alt="Kreuz">
+        <img class="cross" id="ctopright" src="../images/cross3.PNG" alt="Kreuz">
+        <img class="cross" id="cbotleft" src="../images/cross2.PNG" alt="Kreuz">
+        <img class="cross" id="cbutleft" src="../images/cross4.PNG" alt="Kreuz">
+        <img class="cross" id="cmidleft" src="../images/cross2.PNG" alt="Kreuz">
+        <img class="cross" id="cmidright" src="../images/cross4.PNG" alt="Kreuz">
+
+    </section>
+
+    <footer>
+        <a href="https://touren.harzinfo.de/de/tour/themenweg/bsides-innenstadtwalk/343952995/?utm_source=unknown&utm_medium=social&utm_campaign=user-shared-social-content&share=~34ryersx$4ossnphv" target="_blank">Details zur Route</a>
+    </footer>
+
+    <script>
+        const swipeThreshold = 80;
+        let startX = 0;
+        let startY = 0;
+
+        document.addEventListener('touchstart', (event) => {
+            const touch = event.touches[0];
+            startX = touch.clientX;
+            startY = touch.clientY;
+        }, { passive: true });
+
+        document.addEventListener('touchend', (event) => {
+            const touch = event.changedTouches[0];
+            const deltaX = touch.clientX - startX;
+            const deltaY = touch.clientY - startY;
+
+            if (deltaX > swipeThreshold && Math.abs(deltaX) > Math.abs(deltaY)) {
+                sessionStorage.setItem('bsides-open-section', 'routes');
+                window.location.replace('../main.html');
+            }
+        }, { passive: true });
+    </script>
+
+</body>
+</html>

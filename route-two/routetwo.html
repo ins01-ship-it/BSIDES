@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BSides</title>
+
+<link rel="stylesheet" href="two.css">
+</head>
+
+<body>
+
+    <section class="screen">
+
+        <div id="map-bg">
+            <img src="../images/maptrans.PNG" alt="Map Background">
+            <img id="route1" src="../images/route2.PNG" alt="Route 1">
+        </div>
+        <h1 class="screen">2</h1>
+
+        <div id="path-bg">
+            <img src="../images/path1.jpg" alt="path background">
+
+            <a id="so1" class="standort" href="...">Wunderlauch</a>
+            <a id="so2" class="standort" href="...">Prinzenpark</a>
+            <a id="so3" class="standort" href="...">Kolonial<br>denkmal</a>
+            <a id="so4" class="standort" href="...">Extinction Club</a>
+            <a id="so5" class="standort" href="...">Weißes Ross</a>
+            <a id="so6" class="standort" href="...">Broitzem</a>
+            <a id="so7" class="standort" href="...">Jahnstraße</a>
+            <a id="so8" class="standort" href="...">Nexus</a>
+            <a id="so9" class="standort" href="...">Bücherschrank</a>
+            <a id="so10" class="standort" href="...">FLINTA* Sk8</a>
+
+            <div id="th1" class="thumbnail"> <a href="..."><img src="../images/Bilder-Kachel/Lauch.jpeg" alt="Wunderlauchfeld"></a></div>
+            <div id="th2" class="thumbnail"> <a href="..."><img src="../images/Bilder-Kachel/Rednerpult Prinzenpark.jpeg" alt="Prinzenpark"></a></div>
+            <div id="th3" class="thumbnail"> <a href="..."><img src="../images/Bilder-Kachel/Kolonialdenkmal.jpg" alt="Kolonialdenkmal"></a></div>
+            <div id="th4" class="thumbnail"> <a href="..."><img src="../images/Bilder-Kachel/Naturhistorisches Museum.jpg" alt="Extinction Club"></a></div>
+            <div id="th5" class="thumbnail"> <a href="..."><img src="../images/Bilder-Kachel/Ross.png" alt="Weißes Ross"></a></div>
+            <div id="th6" class="thumbnail"> <a href="..."><img src="../images/Bilder-Kachel/stig.jpg" alt="Broitzem"></a></div>
+            <div id="th7" class="thumbnail"> <a href="..."><img src="../images/Bilder-Kachel/jahnstraße.png" alt="Jahnstraße"></a></div>
+            <div id="th8" class="thumbnail"> <a href="..."><img src="../images/Bilder-Kachel/Nexus.jpg" alt="Nexus"></a></div>
+            <div id="th9" class="thumbnail"> <a href="..."><img src="../images/Bilder-Kachel/Bücherschrank.gif" alt="Bücherschrank"></a></div>
+            <div id="th11" class="thumbnail"> <a href="..."><img src="../images/Bilder-Kachel/Skate.gif" alt="FLINTA* Sk8"></a></div>
+
+        </div>
+
+    </section>
+
+        <section id="overlay" class="screen">
+
+        <img class="cross" id="ctopleft" src="../images/cross1.PNG" alt="Kreuz">
+        <img class="cross" id="ctopright" src="../images/cross3.PNG" alt="Kreuz">
+        <img class="cross" id="cbotleft" src="../images/cross2.PNG" alt="Kreuz">
+        <img class="cross" id="cbutleft" src="../images/cross4.PNG" alt="Kreuz">
+        <img class="cross" id="cmidleft" src="../images/cross2.PNG" alt="Kreuz">
+        <img class="cross" id="cmidright" src="../images/cross4.PNG" alt="Kreuz">
+
+    </section>
+
+      <footer>
+        <a href="https://touren.harzinfo.de/de/tour/radtour/bsides-ringrunde/343951744/?utm_source=unknown&utm_medium=social&utm_campaign=user-shared-social-content&share=~34rywvwv$4ossnphi" target="_blank">Details zur Route</a>
+    </footer>
+
+    <script>
+        const swipeThreshold = 80;
+        let startX = 0;
+        let startY = 0;
+
+        document.addEventListener('touchstart', (event) => {
+            const touch = event.touches[0];
+            startX = touch.clientX;
+            startY = touch.clientY;
+        }, { passive: true });
+
+        document.addEventListener('touchend', (event) => {
+            const touch = event.changedTouches[0];
+            const deltaX = touch.clientX - startX;
+            const deltaY = touch.clientY - startY;
+
+            if (deltaX > swipeThreshold && Math.abs(deltaX) > Math.abs(deltaY)) {
+                sessionStorage.setItem('bsides-open-section', 'routes');
+                window.location.replace('../main.html');
+            }
+        }, { passive: true });
+    </script>
+
+</body>
+</html>

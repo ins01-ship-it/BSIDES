@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placeholder</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f5f5f5;
+      color: #111;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 24px;
+    }
+    .box {
+      background: white;
+      padding: 24px 32px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    a {
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1 id="place-title">Placeholder</h1>
+    <p id="place-description">Dieser Ort ist noch nicht hinterlegt.</p>
+    <p><a href="main.html">Zurück zur Startseite</a></p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const place = params.get("place");
+    const labels = {
+      schlossplatz: "Schlossplatz",
+      loewenwall: "Löwenwall",
+      "kirschbaum-allee": "Kirschbaum-Allee",
+      "franki-buecherschrank": "Franki Bücherschrank",
+      "weisses-ross": "Weißes Ross",
+      michaelishof: "Michaelishof",
+      schlossarkaden: "Schlossarkaden",
+      walhalla: "Walhalla",
+      "liberating-the-monument": "Liberating the Monument",
+      wunderlauchfeld: "Wunderlauchfeld",
+      nexus: "Nexus",
+      jahnstrasse: "Jahnstraße",
+      "naturhistorisches-museum": "Naturhistorisches Museum",
+      "das-atelier": "Das Atelier",
+      wendenring: "Wendenring",
+      fliegerhorst: "Fliegerhorst"
+    };
+
+    const title = labels[place] || "Placeholder";
+    document.getElementById("place-title").textContent = title;
+    document.getElementById("place-description").textContent = `Für ${title} ist noch keine Detailseite vorhanden.`;
+  </script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+@font-face {
+    font-family: altehaas;
+    src: url('../fonts/altehaas/AlteHaasGroteskRegular.ttf') format('truetype');
+     src: url('../fonts/altehaas/AlteHaasGroteskBold.ttf') format('truetype');
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+html,
+body{
+    width:100vw;
+    max-width:100vw;
+    font-family: altehaas, sans-serif;
+    overflow-x: hidden;
+}
+
+h1{
+    font-size: 70vw;
+    padding-top: 0%; padding-left: 5%;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    mix-blend-mode: difference;
+}
+a:active{
+    text-decoration: none;
+    color: black;
+}
+
+.screen{
+    position:absolute;
+    width:100vw;
+    height:100vh;
+}
+.screen h1{
+    height: 50%;
+    width: 50%;
+}
+
+#map-bg{
+    position:absolute;
+    inset: 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+#map-bg img{
+    height: 100%;
+    width: 100%;
+}
+
+#route1{
+    position:absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#path-bg{
+    width: 100vw;
+    margin-top: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+#path-bg img{
+    width: 100%;
+    mix-blend-mode: multiply;
+        z-index: 1;
+
+}
+
+.cross{
+    position: absolute;
+    height: 10vw;
+    width: auto;
+}
+#ctopleft{
+    top: 0;
+    left: 0;
+}
+#ctopright{
+    top: 0;
+    right: 0;
+}
+#cbotleft{
+    bottom: 0;
+    left: 0;
+}
+#cbutleft{
+    bottom: 0;
+    right: 0;
+}
+#cmidleft{
+    top: 50%;
+    left: 0;
+}
+#cmidright{
+    top: 50%;
+    right: 0;
+}
+
+
+.standort{
+    position: absolute;
+    font-size: 20px;
+    white-space: nowrap;
+    z-index: 2;
+    font-weight: bold;
+}
+
+#so1{
+    margin-top: 27%;
+    margin-left: 8%;
+    width: 160px;
+}
+#so2{
+    margin-top: 49%;
+    margin-left: 20%;
+}
+#so3{
+    margin-top: 34%;
+    margin-left: 69%;
+}
+#so4{
+    margin-top: 92%;
+    margin-left: 57%;
+    transform: rotate(90deg);
+}
+#so5{
+    margin-top: 113%;
+    margin-left: 24%;
+    transform: rotate(180deg);
+}
+#so6{
+    margin-top: 135%;
+    margin-left: 70%;
+}
+#so7{
+    margin-top: 165%;
+    margin-left: 65%;
+    transform: rotate(180deg);
+}
+#so8{
+    margin-top: 168%;
+    margin-left: 25%;
+}
+#so9{
+    margin-top: 214%;
+    margin-left: 3%;
+}
+#so10{
+    margin-top: 210%;
+    margin-left: 60%;
+    transform: rotate(90deg);
+}
+
+
+.thumbnail{
+    position: absolute;
+    overflow: hidden;
+    z-index: 0;
+    mix-blend-mode: overlay;
+    opacity: 0.9;
+}
+.thumbnail img{
+    width: 100%;
+    z-index: 0;
+    filter: grayscale(100%);
+    mix-blend-mode: difference;
+    opacity: 0.9;
+}
+
+#th1{
+    width: 50%;
+    height: 15%;
+    margin-top: 5%;
+    margin-left: 0%;
+    background-color: rgb(204, 255, 163);
+}
+#th2{
+    width: 35%;
+    height: 20%;
+    margin-top: 49%;
+    margin-left: 15%;
+    background-color: rgb(205, 143, 183);
+}
+#th3{
+    width: 35%;
+    height: 20%;
+    margin-top: 30%;
+    margin-left: 63%;
+    background-color: rgb(113, 173, 213);
+}
+#th4{
+    width: 45%;
+    height: 15%;
+    margin-top: 80%;
+    margin-left: 45%;
+    background-color: rgb(255, 255, 162);
+}
+#th5{
+    width: 45%;
+    height: 15%;
+    margin-top: 113%;
+    margin-left: 10%;
+    background-color: rgb(255, 255, 255);
+}
+#th6{
+    width: 35%;
+    height: 20%;
+    margin-top: 136%;
+    margin-left: 65%;
+    background-color: rgb(132, 230, 255);
+}
+#th7{
+    width: 35%;
+    height: 20%;
+    margin-top: 160%;
+    margin-left: 55%;
+    background-color: rgb(110, 142, 255);
+}
+#th8{
+    width: 45%;
+    height: 15%;
+    margin-top: 158%;
+    margin-left: 3%;
+    background-color: rgb(255, 182, 239);
+}
+#th9{
+    width: 45%;
+    height: 15%;
+    margin-top: 214%;
+    margin-left: 0%;
+    background-color: rgb(255, 195, 160);
+}
+#th11{
+    width: 35%;
+    height: 12%;
+    margin-top: 197%;
+    margin-left: 50%;
+    background-color: rgb(108, 172, 235);
+    padding-bottom: 50px;
+}
+
+footer{
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    color: white;
+    justify-content: center;
+    text-align: center; 
+    margin-top: 100px;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 50px;
+}
